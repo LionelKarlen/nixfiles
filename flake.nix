@@ -22,6 +22,10 @@
 				inherit system;
 				modules = [./configuration.nix];
 			};
+			taiga = nixpkgs.lib.nixosSystem {
+				inherit system;
+				modules = [./taiga-configuration.nix];
+			};
 		};
 		homeConfigurations = {
 			lionel = home-manager.lib.homeManagerConfiguration {
@@ -36,6 +40,19 @@
 				};
 
 			};
+			eepy = home-manager.lib.homeManagerConfiguration {
+				inherit pkgs;
+				modules = [
+				./eepy.nix
+				nixvim.homeManagerModules.nixvim
+				];
+				extraSpecialArgs={
+					inherit nix-colors;
+					inherit pkgs-unstable;
+				};
+
+			};
+
 		};
 	};
 }
