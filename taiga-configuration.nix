@@ -111,6 +111,14 @@
   #   enableSSHSupport = true;
   # };
 
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
