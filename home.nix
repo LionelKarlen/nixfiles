@@ -1,20 +1,21 @@
-{ config, pkgs, ... }:
-
 {
-
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
-	./features/theme.nix
-  	./features/bash.nix
-	./features/tmux.nix
-	./features/git.nix
-	./features/zellij.nix
-	./features/lunarvim.nix
-	./features/fonts.nix
-	./features/nixvim.nix
-	## Optional packages, main way to install new things
-	./features/packages.nix
+    ./features/theme.nix
+    ./features/bash.nix
+    ./features/tmux.nix
+    ./features/git.nix
+    ./features/zellij.nix
+    ./features/lunarvim.nix
+    ./features/fonts.nix
+    ./features/nixvim.nix
+    ## Optional packages, main way to install new things
+    ./features/packages.nix
+    ./features/systemlibs.nix
   ];
-
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -37,7 +38,7 @@
     # # "Hello, world!" when run.
     hello
     neofetch
-	nano
+    nano
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

@@ -8,6 +8,12 @@
             "<leader>e" = "close_window";
           };
         };
+        filteredItems = {
+          hideDotfiles = false;
+          hideByName = [
+            ".git"
+          ];
+        };
       };
     };
     keymaps = [
