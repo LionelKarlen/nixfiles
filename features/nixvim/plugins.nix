@@ -9,6 +9,7 @@
     ./plugins/treesitter.nix
     ./plugins/lsp.nix
     ./plugins/conform.nix
+    ./plugins/gitsigns.nix
   ];
 
   programs.nixvim = {
