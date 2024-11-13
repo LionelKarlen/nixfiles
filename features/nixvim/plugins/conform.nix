@@ -1,34 +1,29 @@
-{pkgs,...}:
-{
-	programs.nixvim = {
-		extraPackages = with pkgs; [
-			stylua
-			alejandra
-		];
-		plugins.conform-nvim = {
-			enable=true;
-			notifyOnError = false;
-			formatOnSave=''
-				function(bufnr)
-					local disable_filetypes = {
-						c=true,
-						cpp=true
-					}
-					return {
-						timeout_ms = 500,
-						lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype]
-					}
-				end
-			'';
-			formattersByFt = {
-				lua = ["stylua"];
-				javascript = [[ "prettier" ]];
-				nix=["alejandra"];
-				"_"=[["prettier"]];
-			};
-		};
+{pkgs, ...}: {
+  programs.nixvim = {
+    extraPackages = with pkgs; [
+      stylua
+      alejandra
+    ];
+    plugins.conform-nvim = {
+      enable = true;
+      settings = {
+        format_on_save = {
+          lsp_format = "fallback";
+          quiet = true;
+          stop_after_first = true;
+          timeout_ms = 250;
+        };
+        notify_on_error = false;
+        formatters_by_ft = {
+          lua = ["stylua"];
+          javascript = [["prettier"]];
+          nix = ["alejandra"];
+          "_" = [["prettier"]];
+        };
+      };
+    };
 
-		keymaps = [
+    keymaps = [
       {
         mode = "";
         key = "<leader>i";
@@ -42,5 +37,5 @@
         };
       }
     ];
-	};
+  };
 }

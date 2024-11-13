@@ -26,7 +26,9 @@
       };
       todo-comments = {
         enable = true;
-        signs = true;
+        settings = {
+          signs = true;
+        };
       };
     };
     extraPlugins = with pkgs.vimPlugins; [
