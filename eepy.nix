@@ -18,6 +18,8 @@
     ## Optional packages, main way to install new things
     ./features/packages.nix
     ./features/desktop_packages.nix
+    ./features/taiga_packages.nix
+    ./features/systemlibs.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
