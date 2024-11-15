@@ -4,10 +4,15 @@
       enable = true;
       servers = {
         #nil-ls.enable=true;
-        tsserver.enable = true;
         nixd.enable = true;
-        svelte.enable = true;
-        rust-analyzer = {
+        svelte = {
+          enable = true;
+          filetypes = [
+            "svelte"
+          ];
+        };
+        ts_ls.enable = true;
+        rust_analyzer = {
           enable = true;
           installCargo = false;
           installRustc = false;

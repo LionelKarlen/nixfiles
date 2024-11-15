@@ -9,6 +9,7 @@
     ./plugins/treesitter.nix
     ./plugins/lsp.nix
     ./plugins/conform.nix
+    ./plugins/gitsigns.nix
   ];
 
   programs.nixvim = {
@@ -19,6 +20,7 @@
       comment = {
         enable = true;
         settings = {
+          toggler.line = "<leader>/";
           opleader = {
             line = "<leader>/";
           };
@@ -26,7 +28,9 @@
       };
       todo-comments = {
         enable = true;
-        signs = true;
+        settings = {
+          signs = true;
+        };
       };
     };
     extraPlugins = with pkgs.vimPlugins; [
