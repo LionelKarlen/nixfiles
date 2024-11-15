@@ -18,7 +18,6 @@
     ## Optional packages, main way to install new things
     ./features/packages.nix
     ./features/desktop_packages.nix
-    ./features/taiga_packages.nix
     ./features/systemlibs.nix
   ];
 
