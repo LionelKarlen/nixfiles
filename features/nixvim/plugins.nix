@@ -10,6 +10,7 @@
     ./plugins/lsp.nix
     ./plugins/conform.nix
     ./plugins/gitsigns.nix
+    ./plugins/surround.nix
   ];
 
   programs.nixvim = {
