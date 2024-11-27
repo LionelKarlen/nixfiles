@@ -16,5 +16,6 @@
     wget
     curl
     rustup
+    python3
   ];
 }
