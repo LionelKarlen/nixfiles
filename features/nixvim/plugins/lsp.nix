@@ -2,6 +2,7 @@
   programs.nixvim = {
     plugins.lsp = {
       enable = true;
+      inlayHints = true;
       servers = {
         #nil-ls.enable=true;
         nixd.enable = true;
@@ -16,6 +17,11 @@
           enable = true;
           installCargo = false;
           installRustc = false;
+          extraOptions = {
+            diagnostics = {
+              enable = true;
+            };
+          };
         };
       };
     };
