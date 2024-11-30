@@ -9,6 +9,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./taiga-hardware-configuration.nix
+    ./features/kanata.nix
   ];
 
   # Bootloader.
@@ -85,7 +86,7 @@
   users.users.eepy = {
     isNormalUser = true;
     description = "lionel";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "uinput"];
     packages = with pkgs; [
       #  thunderbird
     ];
