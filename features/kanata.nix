@@ -92,10 +92,11 @@
             d @pl
             f @=
             g @ht
-            < ^
-            z @sl
-            x @ast
-            c @bsl
+
+            z ^
+            x @sl
+            c @ast
+            v @bsl
 
             h @tld
             n @cln
