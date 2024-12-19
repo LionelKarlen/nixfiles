@@ -17,6 +17,16 @@
 
   networking.hostName = "tundra"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.dhcpcd = {
+    enable = true;
+    extraConfig = ''
+      interface wlp5s0
+      metric 50
+
+      interface enp4s0
+      metric 130
+    '';
+  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
