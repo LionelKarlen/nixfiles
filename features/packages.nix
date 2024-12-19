@@ -17,5 +17,6 @@
     curl
     rustup
     python3
+    pdftk
   ];
 }
