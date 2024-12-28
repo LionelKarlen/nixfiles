@@ -11,6 +11,7 @@
     ./plugins/conform.nix
     ./plugins/gitsigns.nix
     ./plugins/surround.nix
+    ./plugins/trouble.nix
   ];
 
   programs.nixvim = {
