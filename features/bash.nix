@@ -18,6 +18,7 @@
       la = "ls -a";
       hms = "home-manager switch --flake /home/$(whoami)/.$(hostname)/";
       nrb = "nixos-rebuild switch --flake /home/$(whoami)/.$(hostname)/";
+      e = "$EDITOR .";
     };
   };
 }
