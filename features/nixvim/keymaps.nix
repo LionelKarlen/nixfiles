@@ -3,6 +3,11 @@
     keymaps = [
       {
         mode = "n";
+        key = "<leader>p";
+        action = "<cmd>pu<CR>";
+      }
+      {
+        mode = "n";
         key = "<C-u>";
         action = "<C-u>zz";
       }
