@@ -16,6 +16,9 @@
 
   programs.nixvim = {
     plugins = {
+      hardtime = {
+        enable = true;
+      };
       sleuth = {
         enable = true;
       };

@@ -24,6 +24,7 @@
       cursorline = true;
       scrolloff = 10;
       hlsearch = true;
+      scroll = 20;
 
       shiftwidth = 4;
       tabstop = 4;

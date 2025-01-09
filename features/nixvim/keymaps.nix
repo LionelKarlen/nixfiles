@@ -3,6 +3,16 @@
     keymaps = [
       {
         mode = "n";
+        key = "<C-u>";
+        action = "<C-u>zz";
+      }
+      {
+        mode = "n";
+        key = "<C-d>";
+        action = "<C-d>zz";
+      }
+      {
+        mode = "n";
         key = "<leader>fp";
         action = "<cmd>bprev<CR>";
         options = {
