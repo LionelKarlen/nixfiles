@@ -17,6 +17,7 @@
     ./features/kitty.nix
     ## Optional packages, main way to install new things
     ./features/packages.nix
+    ./features/unfree.nix
     ./features/desktop_packages.nix
     ./features/systemlibs.nix
   ];
