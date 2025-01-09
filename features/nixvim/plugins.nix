@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ./plugins/autopair.nix
+    ./plugins/autoclose.nix
     ./plugins/neo-tree.nix
     ./plugins/nvim-cmp.nix
     ./plugins/ui.nix
