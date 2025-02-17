@@ -23,6 +23,12 @@
           close = true;
           pair = "{}";
         };
+        "$" = {
+          escape = false;
+          close = true;
+          pair = "$$";
+          enabled_filetypes = ["typst"];
+        };
       };
       options = {
         disabledFiletypes = null;

@@ -4,6 +4,7 @@
       enable = true;
       inlayHints = true;
       servers = {
+        typst_lsp.enable = true;
         #nil-ls.enable=true;
         nixd.enable = true;
         svelte = {
