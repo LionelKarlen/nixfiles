@@ -18,5 +18,7 @@
     rustup
     python3
     pdftk
+    zip
+    protonvpn-cli_2
   ];
 }
