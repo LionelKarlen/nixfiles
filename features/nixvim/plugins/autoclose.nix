@@ -2,37 +2,48 @@
   programs.nixvim = {
     plugins.autoclose = {
       enable = true;
-      keys = {
-        "<" = {
-          escape = false;
-          close = true;
-          pair = "<>";
+      settings = {
+        keys = {
+          "<" = {
+            escape = false;
+            close = true;
+            pair = "<>";
+          };
+          "(" = {
+            escape = false;
+            close = true;
+            pair = "()";
+          };
+          "[" = {
+            escape = false;
+            close = true;
+            pair = "[]";
+          };
+          "{" = {
+            escape = false;
+            close = true;
+            pair = "{}";
+          };
+          "'" = {
+            escape = false;
+            close = true;
+            pair = "''";
+            disabled_filetypes = [
+              "rust"
+              "typst"
+            ];
+          };
+          "$" = {
+            escape = false;
+            close = true;
+            pair = "$$";
+            enabled_filetypes = ["typst"];
+          };
         };
-        "(" = {
-          escape = false;
-          close = true;
-          pair = "()";
+        options = {
+          disabledFiletypes = null;
+          autoIndent = true;
         };
-        "[" = {
-          escape = false;
-          close = true;
-          pair = "[]";
-        };
-        "{" = {
-          escape = false;
-          close = true;
-          pair = "{}";
-        };
-        "$" = {
-          escape = false;
-          close = true;
-          pair = "$$";
-          enabled_filetypes = ["typst"];
-        };
-      };
-      options = {
-        disabledFiletypes = null;
-        autoIndent = true;
       };
     };
   };
