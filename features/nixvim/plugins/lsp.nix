@@ -13,6 +13,18 @@
             "svelte"
           ];
         };
+        emmet_ls = {
+          enable = true;
+          extraOptions = {
+            init_options = {
+              jsx = {
+                options = {
+                  "markup.attributes" = {className = "class";};
+                };
+              };
+            };
+          };
+        };
         ts_ls.enable = true;
         rust_analyzer = {
           enable = true;
