@@ -8,5 +8,7 @@
     zathura
     freetube
     protonvpn-cli_2
+    librewolf
+    tor-browser
   ];
 }
