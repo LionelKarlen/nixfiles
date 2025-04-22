@@ -1,7 +1,10 @@
-{pkgs, config, nix-colors, ...}: 
 {
-	imports = [nix-colors.homeManagerModules.default];
+  pkgs,
+  config,
+  nix-colors,
+  ...
+}: {
+  imports = [nix-colors.homeManagerModules.default];
 
-	colorScheme = nix-colors.colorSchemes.everforest-dark-hard;
-
+  colorScheme = nix-colors.colorSchemes.everforest-dark-hard;
 }

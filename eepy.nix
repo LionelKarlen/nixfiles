@@ -4,7 +4,6 @@
   ...
 }: {
   imports = [
-    ./features/theme.nix
     ./features/bash.nix
     ./features/gnome.nix
     #./features/tmux.nix
@@ -15,6 +14,7 @@
     ./features/firefox.nix
     ./features/foot.nix
     ./features/kitty.nix
+    ./features/hyprland.nix
     ## Optional packages, main way to install new things
     ./features/packages.nix
     ./features/unfree.nix

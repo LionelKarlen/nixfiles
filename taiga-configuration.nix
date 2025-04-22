@@ -45,11 +45,29 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  #services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  #services.xserver.displayManager.gdm.enable = true;
+  #services.xserver.desktopManager.gnome.enable = true;
+
+  programs.dconf.enable = true;
+  programs.hyprland = {
+    xwayland.enable = true;
+  };
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  xdg.portal.config.common.default = "*";
+
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
+  };
+
+  hardware = {
+    opengl.enable = true;
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -102,6 +120,7 @@
     #  wget
     neovim
     git
+    polkit-kde-agent
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -19,6 +19,6 @@
     python3
     pdftk
     zip
-    protonvpn-cli_2
+    protonvpn-cli
   ];
 }
