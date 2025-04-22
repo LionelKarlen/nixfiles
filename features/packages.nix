@@ -20,5 +20,6 @@
     pdftk
     zip
     protonvpn-cli
+    deno
   ];
 }
