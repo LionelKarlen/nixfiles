@@ -14,9 +14,13 @@
       kstars
       brave
       dolphin
+      libsecret
+      libgnome-keyring
     ])
     ++ (with pkgs-unstable; [
       freetube
       gnome-network-displays
     ]);
+
+  services.gnome-keyring.enable = true;
 }
