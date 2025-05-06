@@ -39,7 +39,7 @@
     colorschemes = {
       base16 = {
         enable = true;
-        colorscheme = "decaf";
+        colorscheme = "catppuccin-latte";
       };
     };
   };

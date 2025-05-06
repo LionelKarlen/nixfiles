@@ -4,6 +4,7 @@
       enable = true;
       window.position = "right";
       filesystem = {
+        hijackNetrwBehavior = "disabled";
         window = {
           mappings = {
             "<leader>e" = "close_window";
@@ -25,6 +26,16 @@
           desc = "NeoTree reveal";
         };
       }
+      {
+        key = "<leader>y";
+        action = "<cmd>Yazi<cr>";
+      }
     ];
+    plugins.yazi = {
+      enable = true;
+      settings = {
+        open_for_directories = false;
+      };
+    };
   };
 }

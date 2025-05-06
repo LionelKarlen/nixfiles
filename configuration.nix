@@ -9,6 +9,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./features/kanata.nix
   ];
 
   # Bootloader.
@@ -68,7 +69,7 @@
   users.users.lionel = {
     isNormalUser = true;
     description = "lionel";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "uinput"];
     packages = with pkgs; [];
   };
 
