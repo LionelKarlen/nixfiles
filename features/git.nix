@@ -15,4 +15,15 @@
       };
     };
   };
+  programs.bash = {
+    shellAliases = {
+      gl = "git log --oneline";
+      gc = "git commit -m";
+      ga = "git add";
+      gaa = "git add -A";
+      gs = "git status";
+      gk = "git checkout";
+      gb = "git branch";
+    };
+  };
 }
