@@ -2,8 +2,18 @@
   programs.nixvim = {
     keymaps = [
       {
+        mode = "n";
+        key = ",";
+        action = "<cmd>noh<CR>";
+      }
+      {
+        mode = "n";
+        key = ";";
+        action = "<cmd>w<CR>";
+      }
+      {
         mode = "i";
-        key = ",,";
+        key = "<C-c>";
         action = "<Esc>";
       }
       {
