@@ -33,8 +33,10 @@
     ];
     plugins.yazi = {
       enable = true;
+      autoLoad = true;
+      lazyLoad.enable = false;
       settings = {
-        open_for_directories = false;
+        open_for_directories = true;
       };
     };
   };

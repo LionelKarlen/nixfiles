@@ -2,6 +2,11 @@
   programs.nixvim = {
     keymaps = [
       {
+        mode = "i";
+        key = ",,";
+        action = "<Esc>";
+      }
+      {
         mode = "n";
         key = "<leader>p";
         action = "<cmd>pu<CR>";

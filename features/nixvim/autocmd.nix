@@ -16,6 +16,11 @@
           end
         '';
       }
+      {
+        event = ["VimEnter"];
+        desc = "Open yazi on neovim enter";
+        command = "Yazi";
+      }
     ];
   };
 }
