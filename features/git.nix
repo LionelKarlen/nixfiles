@@ -24,6 +24,19 @@
       gs = "git status";
       gk = "git checkout";
       gb = "git branch";
+      gph = "git push";
+      gpl = "git pull";
+      gd = "git diff";
+      gi = ''
+        git init
+        wget https://github.com/lionelkarlen/template/archive/refs/heads/main.zip
+        unzip main.zip
+        mv ./template-main/* .
+        rm -rf template-main main.zip
+        git add -A
+        git commit -m "chore: initial"
+        echo finished setup
+      '';
     };
   };
 }
