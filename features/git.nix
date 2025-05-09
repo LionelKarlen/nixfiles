@@ -12,6 +12,11 @@
             "github:"
           ];
         };
+        "https://github.com/lionelkarlen/" = {
+          insteadOf = [
+            "glk:"
+          ];
+        };
       };
     };
   };
@@ -19,6 +24,7 @@
     shellAliases = {
       gl = "git log --oneline";
       gc = "git commit -m";
+      gcl = "git clone";
       ga = "git add";
       gaa = "git add -A";
       gs = "git status";
