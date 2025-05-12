@@ -4,8 +4,7 @@ layout {
       	pane size=1 borderless=true {
       		plugin location="file:@zjstatus@" {
 				hide_frame_for_single_pane "true"
-				format_left   "{session} #[fg=#89B4FA,bold]{tabs}"
-				format_right "{mode}"
+				format_left   "{mode} {session} #[fg=#89B4FA,bold]{tabs}"
 
                 hide_frame_for_single_pane "true"
 
