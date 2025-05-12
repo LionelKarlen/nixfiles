@@ -16,9 +16,8 @@ layout {
 			}
 		}
 	}
-	tab
-	tab split_direction="vertical" {
-		pane
+	tab name="nvim"
+	tab split_direction="vertical" name="zsh" {
 		pane
 	}
 }
