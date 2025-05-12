@@ -6,6 +6,7 @@
   imports = [
     ./features/theme.nix
     ./features/bash.nix
+    ./features/zsh.nix
     ./features/yazi.nix
     ./features/tmux.nix
     ./features/git.nix

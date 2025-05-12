@@ -88,4 +88,9 @@ in {
       zlj = "zellij -l welcome";
     };
   };
+  programs.zsh = {
+    shellAliases = {
+      zlj = "zellij -l welcome";
+    };
+  };
 }

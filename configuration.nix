@@ -64,12 +64,14 @@
 
   # Configure console keymap
   console.keyMap = "sg";
+  programs.zsh.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lionel = {
     isNormalUser = true;
     description = "lionel";
     extraGroups = ["networkmanager" "wheel" "uinput"];
+    shell = pkgs.zsh;
     packages = with pkgs; [];
   };
 
