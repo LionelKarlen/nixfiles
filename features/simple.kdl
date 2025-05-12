@@ -4,15 +4,15 @@ layout {
       	pane size=1 borderless=true {
       		plugin location="file:@zjstatus@" {
 				hide_frame_for_single_pane "true"
-				format_left   "{mode} {session} #[fg=#89B4FA,bold]{tabs}"
+				format_left   "{mode} {session} {tabs}"
 
                 hide_frame_for_single_pane "true"
 
-                mode_normal  "#[bg=blue] "
+                mode_normal  "#[bg=#24acd4] "
                 mode_tmux    "#[bg=#ffc387] "
 
-                tab_normal   "#[fg=#6C7086] {name} "
-                tab_active   "#[fg=#9399B2,bold,italic] {name} "
+                tab_normal   "#[fg=#6C7086] {index}: {name} "
+                tab_active   "#[fg=#24acd4,bold,italic] {index}: {name} "
 			}
 		}
 	}
