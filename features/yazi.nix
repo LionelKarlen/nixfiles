@@ -44,6 +44,11 @@ in {
       full-border = "${yazi-plugins}/full-border.yazi";
       easyjump = "${easyjump}";
     };
+    settings = {
+      manager = {
+        show_hidden = true;
+      };
+    };
     initLua = ''
       require("no-status"):setup()
       require("full-border"):setup()
