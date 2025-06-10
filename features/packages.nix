@@ -21,6 +21,7 @@
       python3
       pdftk
       zip
+      lean4
     ])
     ++ (with pkgs-unstable; [
       deno

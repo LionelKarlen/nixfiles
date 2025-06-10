@@ -12,6 +12,7 @@
     ./plugins/gitsigns.nix
     ./plugins/surround.nix
     ./plugins/trouble.nix
+    ./plugins/lean.nix
   ];
 
   programs.nixvim = {
