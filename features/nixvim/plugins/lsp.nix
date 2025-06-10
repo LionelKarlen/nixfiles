@@ -1,4 +1,4 @@
-{
+{roc_pkgs, ...}: {
   programs.nixvim = {
     plugins.lsp = {
       enable = true;
@@ -12,6 +12,10 @@
           filetypes = [
             "svelte"
           ];
+        };
+        roc_ls = {
+          enable = true;
+          package = roc_pkgs.full;
         };
         emmet_ls = {
           enable = true;

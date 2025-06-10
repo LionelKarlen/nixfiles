@@ -1,8 +1,7 @@
 {
-  config,
-  lib,
   pkgs,
   pkgs-unstable,
+  roc_pkgs,
   ...
 }: {
   home.packages =
@@ -25,5 +24,8 @@
     ])
     ++ (with pkgs-unstable; [
       deno
+    ])
+    ++ (with roc_pkgs; [
+      full
     ]);
 }

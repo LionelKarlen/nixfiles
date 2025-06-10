@@ -10,6 +10,7 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    roc.url = "github:roc-lang/roc";
   };
   outputs = {
     self,
@@ -18,11 +19,13 @@
     home-manager,
     nix-colors,
     nixvim,
+    roc,
     ...
   }: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
     pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+    roc_pkgs = roc.packages.${system};
   in {
     nixosConfigurations = {
       tundra = nixpkgs.lib.nixosSystem {
@@ -44,6 +47,7 @@
         extraSpecialArgs = {
           inherit nix-colors;
           inherit pkgs-unstable;
+          inherit roc_pkgs;
         };
       };
       eepy = home-manager.lib.homeManagerConfiguration {
