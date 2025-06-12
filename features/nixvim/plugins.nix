@@ -13,6 +13,7 @@
     ./plugins/surround.nix
     ./plugins/trouble.nix
     ./plugins/lean.nix
+    ./plugins/lsp_saga.nix
   ];
 
   programs.nixvim = {
