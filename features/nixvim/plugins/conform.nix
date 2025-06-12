@@ -4,6 +4,7 @@
       stylua
       alejandra
     ];
+    plugins.guess-indent.enable = true;
     plugins.conform-nvim = {
       enable = true;
       settings = {

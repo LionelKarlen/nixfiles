@@ -13,7 +13,6 @@
     roc.url = "github:roc-lang/roc";
   };
   outputs = {
-    self,
     nixpkgs,
     nixpkgs-unstable,
     home-manager,

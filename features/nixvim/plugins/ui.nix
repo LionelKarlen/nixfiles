@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   programs.nixvim = {
+    opts.termguicolors = true;
     plugins.lualine.enable = true;
     plugins.web-devicons.enable = true;
     plugins.bufferline = {
