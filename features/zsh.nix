@@ -23,6 +23,7 @@
             local title=$1
             command nohup zellij action rename-tab $title >/dev/null 2>&1
         }
+        KEYTIMEOUT=10
     '';
   };
 }
