@@ -23,6 +23,14 @@
         };
         emmet_language_server = {
           enable = true;
+          extraOptions = {
+            init_options = {
+              includeLanguages = {
+                "javascriptreact" = "html";
+                "typescriptreact" = "html";
+              };
+            };
+          };
           settings = {
             filetypes = [
               "css"
@@ -32,12 +40,6 @@
               "svelte"
               "astro"
             ];
-            init_options = {
-              include_languages = {
-                "javascriptreact" = "html";
-                "typescriptreact" = "html";
-              };
-            };
           };
         };
         ts_ls.enable = true;
