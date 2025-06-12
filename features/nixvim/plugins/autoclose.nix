@@ -31,6 +31,8 @@
             disabled_filetypes = [
               "rust"
               "typst"
+              "markdown"
+              "text"
             ];
           };
           "$" = {

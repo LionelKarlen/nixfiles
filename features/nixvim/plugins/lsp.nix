@@ -1,4 +1,8 @@
-{roc_pkgs, ...}: {
+{
+  roc_pkgs,
+  pkgs-unstable,
+  ...
+}: {
   programs.nixvim = {
     plugins.lsp = {
       enable = true;
@@ -17,14 +21,21 @@
           enable = true;
           package = roc_pkgs.full;
         };
-        emmet_ls = {
+        emmet_language_server = {
           enable = true;
-          extraOptions = {
+          settings = {
+            filetypes = [
+              "css"
+              "html"
+              "javascriptreact"
+              "typescriptreact"
+              "svelte"
+              "astro"
+            ];
             init_options = {
-              jsx = {
-                options = {
-                  "markup.attributes" = {className = "class";};
-                };
+              include_languages = {
+                "javascriptreact" = "html";
+                "typescriptreact" = "html";
               };
             };
           };
