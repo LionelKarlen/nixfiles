@@ -1,8 +1,17 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   zjplugin_version = "v0.20.2";
   zjstatus = pkgs.fetchurl {
     url = "https://github.com/dj95/zjstatus/releases/download/${zjplugin_version}/zjstatus.wasm";
     hash = "sha256-OSg7Q1AWKW32Y9sHWJbWOXWF1YI5mt0N4Vsa2fcvuNg=";
+  };
+  zellij-switch_version = "0.2.1";
+  zellij-switch = pkgs.fetchurl {
+    url = "https://github.com/mostafaqanbaryan/zellij-switch/releases/download/${zellij-switch_version}/zellij-switch.wasm";
+    hash = "sha256-7yV+Qf/rczN+0d6tMJlC0UZj0S2PWBcPDNq1BFsKIq4=";
   };
 in {
   programs.zellij = {
@@ -27,6 +36,11 @@ in {
       ui = {
         pane_frames = {
           hide_session_name = true;
+        };
+      };
+      plugins = {
+        zellij-switch = {
+          location = "file:${zellij-switch}";
         };
       };
       default_mode = "locked";

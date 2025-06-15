@@ -39,7 +39,8 @@
     colorschemes = {
       base16 = {
         enable = true;
-        colorscheme = "catppuccin-latte";
+        # colorscheme = "catppuccin-latte";
+        colorscheme = "ayu-light";
       };
     };
   };

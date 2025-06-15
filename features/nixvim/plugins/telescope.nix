@@ -31,7 +31,7 @@
         action.__raw = ''
           function()
           	require('telescope.builtin').buffers(
-          		require('telescope.themes').get_dropdown {
+          		require('telescope.themes').get_ivy {
           			winblend=1,
           			previewer=false
           		}
@@ -48,7 +48,7 @@
         action.__raw = ''
           function()
           	require('telescope.builtin').find_files(
-          		require('telescope.themes').get_dropdown {
+          		require('telescope.themes').get_ivy {
           			winblend=10,
           			previewer=true
           		}
