@@ -13,6 +13,12 @@
     url = "https://github.com/mostafaqanbaryan/zellij-switch/releases/download/${zellij-switch_version}/zellij-switch.wasm";
     hash = "sha256-7yV+Qf/rczN+0d6tMJlC0UZj0S2PWBcPDNq1BFsKIq4=";
   };
+  zelegate = import (pkgs.fetchFromGitHub {
+    owner = "lionelkarlen";
+    repo = "zelegate";
+    rev = "aaf5edce5f8f9a9f0fdff382b245f63a07521b24";
+    hash = "sha256-gbaL6tubw7FYQdq8aUwGTMpd2vD7F0TDxI1mur2qZxc=";
+  }) {inherit pkgs;};
 in {
   programs.zellij = {
     enable = true;
@@ -44,7 +50,7 @@ in {
         };
       };
       default_mode = "locked";
-      default_layout = "simple";
+      default_layout = "default";
       "keybinds clear-defaults=true" = {
         shared = {
           "bind \"Ctrl o\"" = {SwitchToMode = "tmux";};
@@ -93,10 +99,13 @@ in {
          pane
          }
   '';
-  home.file.".config/zellij/layouts/simple.kdl".source = pkgs.substituteAll {
+  home.file.".config/zellij/layouts/default.kdl".source = pkgs.substituteAll {
     src = ./simple.kdl;
     inherit zjstatus;
   };
+  home.packages = [
+    zelegate
+  ];
   programs.bash = {
     shellAliases = {
       zlj = "zellij -l welcome";
