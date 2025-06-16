@@ -21,6 +21,7 @@
       pdftk
       zip
       lean4
+      nim
     ])
     ++ (with pkgs-unstable; [
       deno

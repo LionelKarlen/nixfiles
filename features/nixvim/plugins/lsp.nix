@@ -21,6 +21,9 @@
           enable = true;
           package = roc_pkgs.full;
         };
+        nim_langserver = {
+          enable = true;
+        };
         emmet_language_server = {
           enable = true;
           extraOptions = {
