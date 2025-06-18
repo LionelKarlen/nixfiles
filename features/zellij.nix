@@ -16,9 +16,10 @@
   zelegate = import (pkgs.fetchFromGitHub {
     owner = "lionelkarlen";
     repo = "zelegate";
-    rev = "aaf5edce5f8f9a9f0fdff382b245f63a07521b24";
-    hash = "sha256-gbaL6tubw7FYQdq8aUwGTMpd2vD7F0TDxI1mur2qZxc=";
+    rev = "c3c5af672b525eba7ca17aceb67b6f4808d40957";
+    hash = "sha256-E3Rr6mlBqXSnlPibzUzQGU+HtQpehC0XxO19+y39I84=";
   }) {inherit pkgs;};
+  zelewidget_cmd = "zelewidget documents documents/programming documents/school";
 in {
   programs.zellij = {
     enable = true;
@@ -114,6 +115,32 @@ in {
   programs.zsh = {
     shellAliases = {
       zlj = "zellij -l welcome";
+      z = zelewidget_cmd;
     };
+    initExtra = ''
+                zel() {
+                  (
+                    exec </dev/tty
+                    exec <&1
+                    ${zelewidget_cmd}
+                  )
+      TRAPEXIT() {
+      printf '\n'
+      zle .reset-prompt
+          }
+                }
+                zle -N zel
+                bindkey  "^w" zel
+                # bindkey -s "^w" "(z)\n"
+    '';
+  };
+  programs.nixvim = {
+    keymaps = [
+      {
+        mode = "n";
+        key = "<C-w>";
+        action = "<cmd>!${zelewidget_cmd}<CR>";
+      }
+    ];
   };
 }

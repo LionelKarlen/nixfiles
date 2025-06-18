@@ -22,6 +22,8 @@
       zip
       lean4
       nim
+      fzf
+      fd
     ])
     ++ (with pkgs-unstable; [
       deno
