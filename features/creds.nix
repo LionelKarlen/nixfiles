@@ -7,14 +7,15 @@
     enable = true;
     settings = {
       use-agent = true;
-      pinentry-mode = "loopback";
+      batch-mode = false;
+      pinentry-mode = "ask";
     };
   };
 
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
-    pinentryPackage = pkgs.pinentry-tty;
+    pinentryPackage = pkgs.pinentry-curses;
   };
   programs.zsh = {
     initExtra = ''

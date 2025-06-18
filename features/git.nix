@@ -29,6 +29,7 @@
       };
       credential = {
         helper = "manager";
+        "https://github.com".username = "lionelkarlen";
         credentialStore = "gpg";
       };
     };
