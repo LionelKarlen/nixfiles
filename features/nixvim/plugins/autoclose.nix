@@ -33,6 +33,7 @@
               "typst"
               "markdown"
               "text"
+              ""
             ];
           };
           "$" = {
