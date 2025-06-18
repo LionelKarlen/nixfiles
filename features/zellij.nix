@@ -116,6 +116,7 @@ in {
     shellAliases = {
       zlj = "zellij -l welcome";
       z = zelewidget_cmd;
+      zh = "zellij a -c";
     };
     initExtra = ''
                 zel() {
