@@ -1,4 +1,13 @@
-{
+{pkgs, ...}: {
+  imports = [
+    ./creds.nix
+  ];
+
+  home.packages = with pkgs; [
+    git
+    git-credential-manager
+  ];
+
   programs.git = {
     enable = true;
     userName = "Lionel Karlen";
@@ -17,6 +26,10 @@
             "glk:"
           ];
         };
+      };
+      credential = {
+        helper = "manager";
+        credentialStore = "gpg";
       };
     };
   };
