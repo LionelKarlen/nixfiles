@@ -8,13 +8,13 @@
     keymaps = [
       {
         mode = "n";
-        key = "<leader>xt";
-        action = "<cmd>Trouble todo<CR>";
+        key = "<leader>st";
+        action = "<cmd>Trouble todo toggle<CR>";
       }
       {
         mode = "n";
-        key = "<leader>xd";
-        action = "<cmd>Trouble diagnostics<CR>";
+        key = "<leader>se";
+        action = "<cmd>Trouble diagnostics toggle<CR>";
       }
     ];
   };

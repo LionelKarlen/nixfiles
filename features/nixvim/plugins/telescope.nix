@@ -2,7 +2,7 @@
   programs.nixvim = {
     highlight = {
       TelescopePromptPrefix.fg = "#24acd4";
-      TelescopePromptTitle = {bg = "#000000";};
+      TelescopePromptTitle.link = "Normal";
       TelescopePromptNormal.link = "Normal";
       TelescopePromptBorder.link = "Normal";
       TelescopeResultsTitle.link = "Normal";

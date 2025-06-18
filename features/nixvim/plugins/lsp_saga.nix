@@ -9,12 +9,12 @@
     keymaps = [
       {
         mode = "n";
-        key = "gd";
+        key = "sd";
         action = "<cmd>Lspsaga hover_doc<CR>";
       }
       {
         mode = "n";
-        key = "gf";
+        key = "sf";
         action = "<cmd>Lspsaga code_action<CR>";
       }
       {
