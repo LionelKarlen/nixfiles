@@ -8,7 +8,12 @@
       enable = true;
       inlayHints = true;
       servers = {
-        tinymist.enable = true;
+        tinymist = {
+          enable = true;
+          settings = {
+            formatterMode = "typstyle";
+          };
+        };
         #nil-ls.enable=true;
         nixd.enable = true;
         svelte = {

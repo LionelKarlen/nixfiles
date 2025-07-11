@@ -15,6 +15,7 @@
     ./features/nu.nix
     ./features/fonts.nix
     ./features/nixvim.nix
+    ./features/typst.nix
     ## Optional packages, main way to install new things
     ./features/packages.nix
     ./features/systemlibs.nix
