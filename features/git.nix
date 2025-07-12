@@ -37,7 +37,8 @@
   programs.bash = {
     shellAliases = {
       gl = "git log --oneline";
-      gc = "git commit -m";
+      gc = "git commit";
+      gcm = "git commit -m";
       gcl = "git clone";
       ga = "git add";
       gaa = "git add -A";
@@ -62,7 +63,8 @@
   programs.zsh = {
     shellAliases = {
       gl = "git log --oneline";
-      gc = "git commit -m";
+      gc = "git commit";
+      gcm = "git commit -m";
       gcl = "git clone";
       ga = "git add";
       gaa = "git add -A";

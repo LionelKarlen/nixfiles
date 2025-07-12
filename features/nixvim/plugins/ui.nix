@@ -4,7 +4,7 @@
     plugins.lualine.enable = true;
     plugins.web-devicons.enable = true;
     plugins.bufferline = {
-      enable = true;
+      enable = false;
       settings = {
         options = {
           offsets = [
