@@ -4,12 +4,12 @@
   config,
   ...
 }: let
-  elk-utils_version = "0.1.0";
+  elk-utils_version = "1.0.0";
   elk-utils = pkgs.fetchFromGitHub {
     owner = "lionelkarlen";
     repo = "elk-utils";
-    rev = "5023eeb3f94339c26aff64805922fa651ef06625";
-    hash = "sha256-xU9VucbkL3KBiEECTiGG2B6rk3wq5RL2ngLpZy9Azms=";
+    rev = "448e34dccdb4372947972951e224954efbdbdc7d";
+    hash = "sha256-nu7RNssMcrVDuYzjYspa2iePVogyuteGimtmIaVWnEw=";
   };
 in {
   home.packages =
