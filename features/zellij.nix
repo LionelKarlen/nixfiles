@@ -59,6 +59,12 @@ in {
           "bind \"Alt j\"" = {MoveFocus = "Down";};
           "bind \"Alt k\"" = {MoveFocus = "Up";};
           "bind \"Alt l\"" = {MoveFocusOrTab = "Right";};
+          "bind \"Ctrl 1\"" = {GoToTab = 1;};
+          "bind \"Ctrl 2\"" = {GoToTab = 2;};
+          "bind \"Ctrl 3\"" = {GoToTab = 3;};
+          "bind \"Ctrl 4\"" = {GoToTab = 4;};
+          "bind \"Ctrl 5\"" = {GoToTab = 5;};
+          "bind \"Ctrl 6\"" = {GoToTab = 6;};
         };
 
         tmux = {
