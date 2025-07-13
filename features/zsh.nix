@@ -5,7 +5,7 @@
       la = "ls -a";
       hms = "home-manager switch --flake /home/$(whoami)/.$(hostname)/";
       e = "$EDITOR";
-      c = "$EDITOR";
+      c = "$EDITOR -c \"let g:open_yazi=v:true\"";
     };
     initExtra = ''
       autoload -Uz add-zsh-hook
