@@ -55,10 +55,10 @@ in {
       "keybinds clear-defaults=true" = {
         shared = {
           "bind \"Ctrl o\"" = {SwitchToMode = "tmux";};
-          "bind \"Alt h\"" = {MoveFocusOrTab = "Left";};
-          "bind \"Alt j\"" = {MoveFocus = "Down";};
-          "bind \"Alt k\"" = {MoveFocus = "Up";};
-          "bind \"Alt l\"" = {MoveFocusOrTab = "Right";};
+          # "bind \"Alt h\"" = {MoveFocusOrTab = "Left";};
+          # "bind \"Alt j\"" = {MoveFocus = "Down";};
+          # "bind \"Alt k\"" = {MoveFocus = "Up";};
+          # "bind \"Alt l\"" = {MoveFocusOrTab = "Right";};
           "bind \"Ctrl 1\"" = {GoToTab = 1;};
           "bind \"Ctrl 2\"" = {GoToTab = 2;};
           "bind \"Ctrl 3\"" = {GoToTab = 3;};
@@ -70,14 +70,14 @@ in {
         tmux = {
           "bind \"d\"" = {Detach = [];};
           "bind \"Esc\" \"Ctrl o\"" = {SwitchToMode = "locked";};
-          "bind \"n\"" = {
-            NewPane = "Right";
-            SwitchToMode = "locked";
-          };
-          "bind \"u\"" = {
-            NewPane = "Down";
-            SwitchToMode = "locked";
-          };
+          # "bind \"n\"" = {
+          #   NewPane = "Right";
+          #   SwitchToMode = "locked";
+          # };
+          # "bind \"u\"" = {
+          #   NewPane = "Down";
+          #   SwitchToMode = "locked";
+          # };
           "bind \"q\"" = {
             CloseFocus = [];
             SwitchToMode = "locked";
@@ -87,13 +87,13 @@ in {
             SwitchToMode = "locked";
           };
           "bind \"Tab\"" = {GoToNextTab = [];};
-          "bind \"w\"" = {
-            "LaunchOrFocusPlugin \"session-manager\"" = {
-              floating = true;
-              move_to_focused_tab = true;
-            };
-            SwitchToMode = "locked";
-          };
+          # "bind \"w\"" = {
+          #   "LaunchOrFocusPlugin \"session-manager\"" = {
+          #     floating = true;
+          #     move_to_focused_tab = true;
+          #   };
+          #   SwitchToMode = "locked";
+          # };
         };
       };
     };
