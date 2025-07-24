@@ -39,6 +39,11 @@
           desc = "Format buffer";
         };
       }
+      {
+        mode = "n";
+        key = "<C-s>";
+        action = "<cmd>noau w<CR>";
+      }
     ];
   };
 }
