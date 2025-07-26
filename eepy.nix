@@ -6,6 +6,7 @@
   imports = [
     ./features/bash.nix
     ./features/gnome.nix
+    ./features/zsh.nix
     #./features/tmux.nix
     ./features/git.nix
     ./features/zellij.nix

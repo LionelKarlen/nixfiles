@@ -16,6 +16,7 @@
       dolphin
       libsecret
       libgnome-keyring
+      sioyek
     ])
     ++ (with pkgs-unstable; [
       freetube

@@ -58,6 +58,7 @@
         extraSpecialArgs = {
           inherit nix-colors;
           inherit pkgs-unstable;
+          inherit roc_pkgs;
         };
       };
     };

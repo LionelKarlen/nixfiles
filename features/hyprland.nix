@@ -45,18 +45,17 @@
       decoration = {
         rounding = 0;
         blur.enabled = false;
-        drop_shadow = "no";
       };
       animations = {
         enabled = "yes";
         bezier = "in_bezier, 0.05, 0.9, 0.1, 1.05";
         animation = [
-          "windows, 1, 4, in_bezier"
-          "windowsOut, 1, 4, default, popin 80%"
-          "border, 1, 4, default"
-          "borderangle, 1, 4, default"
-          "fade, 1, 4, default"
-          "workspaces, 1, 4, default"
+          "windows, 1, 2, in_bezier"
+          "windowsOut, 1, 2, default, popin 80%"
+          "border, 1, 2, default"
+          "borderangle, 1, 2, default"
+          "fade, 1, 2, default"
+          "workspaces, 1, 2, default"
         ];
       };
       dwindle = {
@@ -74,17 +73,16 @@
       "$mainMod" = "SUPER";
       bind = [
         # execution
-        "$mainMod, T, exec, foot"
         "$mainMod, RETURN, exec, foot"
         "$mainMod, B, exec, librewolf"
+        "$mainMod SHIFT, B, exec, librewolf --private-window"
         "$mainMod, E, exec, dolphin"
-        "$mainMod, R, exec, rofi -show drun"
         "$mainMod, SPACE, exec, rofi -show drun"
 
         # hotkeys
         "$mainMod SHIFT, E, exit" # close hyprland
         "$mainMod, Q, killactive" # close current window
-        "$mainMod, V, togglefloating" # toggle the current window as floating
+        "$mainMod, T, togglefloating" # toggle the current window as floating
         "$mainMod, U, togglesplit" # toggle vertical or horizontal splitting
         "$mainMod, P, pseudo," # pseudo
         "$mainMod, F, fullscreen, 0"
@@ -109,6 +107,8 @@
         "$mainMod, 7, workspace, 7"
         "$mainMod, 8, workspace, 8"
         "$mainMod, 9, workspace, 9"
+        "$mainMod, O, workspace, O"
+        "$mainMod, Y, workspace, Y"
 
         "$mainMod SHIFT, 1, movetoworkspace, 1"
         "$mainMod SHIFT, 2, movetoworkspace, 2"
@@ -119,6 +119,8 @@
         "$mainMod SHIFT, 7, movetoworkspace, 7"
         "$mainMod SHIFT, 8, movetoworkspace, 8"
         "$mainMod SHIFT, 9, movetoworkspace, 9"
+        "$mainMod SHIFT, O, movetoworkspace, O"
+        "$mainMod SHIFT, Y, movetoworkspace, Y"
 
         # scratchpad
         "$mainMod, S, togglespecialworkspace, magic"
