@@ -1,9 +1,9 @@
 {
   description = "Tundra config flake";
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.11";
+    nixpkgs.url = "nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-colors.url = "github:misterio77/nix-colors";
     nixvim = {
@@ -35,6 +35,10 @@
         inherit system;
         modules = [./taiga-configuration.nix];
       };
+      glade = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [./glade-configuration.nix];
+      };
     };
     homeConfigurations = {
       lionel = home-manager.lib.homeManagerConfiguration {
@@ -53,6 +57,18 @@
         inherit pkgs;
         modules = [
           ./eepy.nix
+          nixvim.homeManagerModules.nixvim
+        ];
+        extraSpecialArgs = {
+          inherit nix-colors;
+          inherit pkgs-unstable;
+          inherit roc_pkgs;
+        };
+      };
+      "lionel@glade" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./glade-home.nix
           nixvim.homeManagerModules.nixvim
         ];
         extraSpecialArgs = {
