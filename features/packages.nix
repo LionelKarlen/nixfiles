@@ -26,7 +26,6 @@
       fd
     ])
     ++ (with pkgs-unstable; [
-      deno
       just
     ])
     ++ (with roc_pkgs; [
