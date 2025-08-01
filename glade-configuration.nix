@@ -102,6 +102,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
+  programs.noisetorch.enable = true;
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -119,12 +120,14 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+  programs.zsh.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lionel = {
     isNormalUser = true;
     description = "lionel";
     extraGroups = ["networkmanager" "wheel"];
+    shell = pkgs.zsh;
     packages = with pkgs; [
       #  thunderbird
     ];

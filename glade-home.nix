@@ -6,11 +6,11 @@
   imports = [
     #./features/theme.nix
     #./features/bash.nix
-    #./features/zsh.nix
-    #./features/yazi.nix
+    ./features/zsh.nix
+    ./features/yazi.nix
     #./features/tmux.nix
     ./features/git.nix
-    #./features/zellij.nix
+    ./features/zellij.nix
     #./features/lunarvim.nix
     #./features/nu.nix
     #./features/fonts.nix
@@ -20,6 +20,9 @@
     ./features/glade/packages.nix
     ./features/glade/desktop.nix
     ./features/glade/unfree.nix
+    ./features/glade/rofi.nix
+    ./features/glade/theme.nix
+    ./features/glade/ghostty.nix
     #./features/typst.nix
     ### Optional packages, main way to install new things
     #./features/packages.nix

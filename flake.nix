@@ -11,6 +11,10 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     roc.url = "github:roc-lang/roc";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     nixpkgs,
@@ -19,6 +23,7 @@
     nix-colors,
     nixvim,
     roc,
+    zen-browser,
     ...
   }: let
     system = "x86_64-linux";
@@ -70,6 +75,7 @@
         modules = [
           ./glade-home.nix
           nixvim.homeManagerModules.nixvim
+          zen-browser.homeModules.twilight
         ];
         extraSpecialArgs = {
           inherit nix-colors;

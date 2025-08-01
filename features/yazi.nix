@@ -9,7 +9,7 @@
       owner = "yazi-rs";
       repo = "plugins";
       rev = "864a0210d9ba1e8eb925160c2e2a25342031d8d3";
-      hash = "sha256-+KK8IylF+CvYcJe2hjs+TplRMwF2C2c+nP1s4JRhbcc=";
+      hash = "sha256-m3709h7/AHJAtoJ3ebDA40c77D+5dCycpecprjVqj/k=";
     };
     installPhase = ''
       mkdir -p $out/smart-enter.yazi

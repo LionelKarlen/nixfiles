@@ -114,8 +114,8 @@
         "$mainMod, 7, workspace, 7"
         "$mainMod, 8, workspace, 8"
         "$mainMod, 9, workspace, 9"
-        "$mainMod, O, workspace, O"
-        "$mainMod, Y, workspace, Y"
+        "$mainMod, O, workspace, name:O"
+        "$mainMod, Y, workspace, name:Y"
 
         "$mainMod SHIFT, 1, movetoworkspace, 1"
         "$mainMod SHIFT, 2, movetoworkspace, 2"
@@ -126,8 +126,8 @@
         "$mainMod SHIFT, 7, movetoworkspace, 7"
         "$mainMod SHIFT, 8, movetoworkspace, 8"
         "$mainMod SHIFT, 9, movetoworkspace, 9"
-        "$mainMod SHIFT, O, movetoworkspace, O"
-        "$mainMod SHIFT, Y, movetoworkspace, Y"
+        "$mainMod SHIFT, O, movetoworkspace, name:O"
+        "$mainMod SHIFT, Y, movetoworkspace, name:Y"
 
         # scratchpad
         "$mainMod, S, togglespecialworkspace, magic"

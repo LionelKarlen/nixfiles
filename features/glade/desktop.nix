@@ -14,6 +14,7 @@
       libsecret
       libgnome-keyring
       sioyek
+      vlc
     ])
     ++ (with pkgs-unstable; [
       freetube
@@ -21,4 +22,6 @@
     ]);
 
   services.gnome-keyring.enable = true;
+
+  programs.zen-browser.enable = true;
 }
