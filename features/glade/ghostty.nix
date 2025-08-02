@@ -10,6 +10,7 @@
       window-padding-balance = true;
       maximize = true;
       cursor-invert-fg-bg = true;
+      command = "zsh";
     };
   };
 }

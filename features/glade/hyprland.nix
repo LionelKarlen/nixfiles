@@ -54,14 +54,18 @@
       };
       animations = {
         enabled = "yes";
-        bezier = "in_bezier, 0.05, 0.9, 0.1, 1.05";
+        bezier = [
+          "in_bezier, 0.05, 0.9, 0.1, 1.05"
+          "inout_bezier, 0.65, 0, 0.35, 1"
+        ];
         animation = [
           "windows, 1, 2, in_bezier"
           "windowsOut, 1, 2, default, popin 80%"
           "border, 1, 2, default"
           "borderangle, 1, 2, default"
           "fade, 1, 2, default"
-          "workspaces, 1, 2, default"
+          "workspaces, 1, 2, inout_bezier"
+          "specialWorkspace,1,2,default,slidefadevert -50%"
         ];
       };
       dwindle = {
@@ -114,8 +118,6 @@
         "$mainMod, 7, workspace, 7"
         "$mainMod, 8, workspace, 8"
         "$mainMod, 9, workspace, 9"
-        "$mainMod, O, workspace, name:O"
-        "$mainMod, Y, workspace, name:Y"
 
         "$mainMod SHIFT, 1, movetoworkspace, 1"
         "$mainMod SHIFT, 2, movetoworkspace, 2"
@@ -126,8 +128,14 @@
         "$mainMod SHIFT, 7, movetoworkspace, 7"
         "$mainMod SHIFT, 8, movetoworkspace, 8"
         "$mainMod SHIFT, 9, movetoworkspace, 9"
-        "$mainMod SHIFT, O, movetoworkspace, name:O"
-        "$mainMod SHIFT, Y, movetoworkspace, name:Y"
+
+        "$mainMod, O, togglespecialworkspace, O"
+        "$mainMod, D, togglespecialworkspace, D"
+        "$mainMod, Y, togglespecialworkspace, Y"
+
+        "$mainMod SHIFT, O, movetoworkspace, special:O"
+        "$mainMod SHIFT, D, movetoworkspace, special:D"
+        "$mainMod SHIFT, Y, movetoworkspace, special:Y"
 
         # scratchpad
         "$mainMod, S, togglespecialworkspace, magic"
