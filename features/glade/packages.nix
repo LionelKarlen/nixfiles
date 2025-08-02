@@ -18,6 +18,7 @@
     ])
     ++ (with pkgs-unstable; [
       just
+      super-productivity
     ])
     ++ (with roc_pkgs; [
       full

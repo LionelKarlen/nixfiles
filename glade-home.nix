@@ -23,6 +23,7 @@
     ./features/glade/rofi.nix
     ./features/glade/theme.nix
     ./features/glade/ghostty.nix
+    ./features/glade/sioyek.nix
     #./features/typst.nix
     ### Optional packages, main way to install new things
     #./features/packages.nix

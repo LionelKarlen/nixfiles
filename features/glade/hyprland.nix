@@ -1,20 +1,23 @@
 {
   config,
   pkgs,
+  pkgs-unstable,
   ...
 }: {
   imports = [
-    # ./rofi.nix
     ./waybar.nix
   ];
 
-  home.packages = [
-    pkgs.xwayland
-    pkgs.swww
-    pkgs.networkmanagerapplet
-    pkgs.kdePackages.breeze
-    pkgs.pavucontrol
-  ];
+  home.packages =
+    (with pkgs; [
+      pkgs.xwayland
+      pkgs.networkmanagerapplet
+      pkgs.kdePackages.breeze
+      pkgs.pavucontrol
+    ])
+    ++ (with pkgs-unstable; [
+      swww
+    ]);
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -38,10 +41,10 @@
       };
       general = {
         border_size = 2;
-        gaps_in = 3;
-        gaps_out = 2;
+        gaps_in = 5;
+        gaps_out = 10;
         layout = "dwindle";
-        "col.active_border" = "0xff24acd4";
+        "col.active_border" = "0xffB3D89C";
       };
       workspace = [
         "1,monitor:DP-2"
@@ -49,7 +52,7 @@
         "3,monitor:DP-2"
       ];
       decoration = {
-        rounding = 0;
+        rounding = 2;
         blur.enabled = false;
       };
       animations = {
@@ -83,12 +86,13 @@
       "$mainMod" = "SUPER";
       bind = [
         # execution
-        "$mainMod, RETURN, exec, foot"
-        "$mainMod, B, exec, librewolf"
-        "$mainMod SHIFT, B, exec, librewolf --private-window"
+        "$mainMod, RETURN, exec, ghostty"
+        "$mainMod, A, exec, ghostty"
+        "$mainMod SHIFT, B, exec, zen --private-window"
+        "$mainMod, B, exec, zen"
         "$mainMod, E, exec, dolphin"
         "$mainMod, SPACE, exec, rofi -show drun"
-        "$mainMod, g, exec, hyprctl monitors all > /home/lionel/monitors"
+        "$mainMod, R, exec, rofi -show drun"
 
         # hotkeys
         "$mainMod SHIFT, E, exit" # close hyprland

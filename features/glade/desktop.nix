@@ -13,7 +13,6 @@
       brave
       libsecret
       libgnome-keyring
-      sioyek
       vlc
     ])
     ++ (with pkgs-unstable; [
