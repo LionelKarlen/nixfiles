@@ -15,6 +15,7 @@
       networkmanagerapplet
       kdePackages.breeze
       pavucontrol
+      hyprshot
     ])
     ++ (with pkgs-unstable; [
       swww
@@ -88,12 +89,13 @@
       bind = [
         # execution
         "$mainMod, RETURN, exec, ghostty"
-        "$mainMod, A, exec, ghostty"
+        "$mainMod, N, exec, ghostty"
         "$mainMod SHIFT, B, exec, zen --private-window"
         "$mainMod, B, exec, zen"
         "$mainMod, E, exec, dolphin"
         "$mainMod, SPACE, exec, rofi -show drun"
         "$mainMod, R, exec, rofi -show drun"
+        "$mainMod, Z, exec, hyprshot -m region --clipboard-only"
 
         # hotkeys
         "$mainMod SHIFT, E, exit" # close hyprland
