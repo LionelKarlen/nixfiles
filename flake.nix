@@ -15,6 +15,10 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "github:nix-community/stylix/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     nixpkgs,
@@ -24,6 +28,7 @@
     nixvim,
     roc,
     zen-browser,
+    stylix,
     ...
   }: let
     system = "x86_64-linux";
@@ -42,7 +47,9 @@
       };
       glade = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [./glade-configuration.nix];
+        modules = [
+          ./glade-configuration.nix
+        ];
       };
     };
     homeConfigurations = {
@@ -76,6 +83,7 @@
           ./glade-home.nix
           nixvim.homeManagerModules.nixvim
           zen-browser.homeModules.twilight
+          stylix.homeModules.stylix
         ];
         extraSpecialArgs = {
           inherit nix-colors;

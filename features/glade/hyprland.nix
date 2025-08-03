@@ -1,7 +1,8 @@
 {
-  config,
   pkgs,
   pkgs-unstable,
+  lib,
+  config,
   ...
 }: {
   imports = [
@@ -10,10 +11,10 @@
 
   home.packages =
     (with pkgs; [
-      pkgs.xwayland
-      pkgs.networkmanagerapplet
-      pkgs.kdePackages.breeze
-      pkgs.pavucontrol
+      xwayland
+      networkmanagerapplet
+      kdePackages.breeze
+      pavucontrol
     ])
     ++ (with pkgs-unstable; [
       swww
@@ -44,7 +45,7 @@
         gaps_in = 5;
         gaps_out = 10;
         layout = "dwindle";
-        "col.active_border" = "0xffB3D89C";
+        "col.active_border" = lib.mkForce ''rgb(${config.lib.stylix.colors.base0B})'';
       };
       workspace = [
         "1,monitor:DP-2"
@@ -52,7 +53,7 @@
         "3,monitor:DP-2"
       ];
       decoration = {
-        rounding = 2;
+        rounding = 0;
         blur.enabled = false;
       };
       animations = {
@@ -146,8 +147,8 @@
         "$mainMod SHIFT, S, movetoworkspace, special:magic"
       ];
       exec-once = [
-        # "hyprctl setcursor Breeze_Light 24"
-        # "bash ~/.taiga/features/hyprland_autostart.sh"
+        "hyprctl setcursor Bibita-Modern-Ice 24"
+        "bash ~/.glade/features/glade/files/hyprland_startup.sh"
       ];
     };
   };

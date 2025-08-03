@@ -1,115 +1,45 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
+{config, ...}: {
+  stylix.targets.waybar = {
+    addCss = false;
+  };
+
   programs.waybar = {
     enable = true;
-    style = ''
+    style = with config.lib.stylix.colors.withHashtag;
+      ''
+        @define-color base00 ${base00}; @define-color base01 ${base01}; @define-color base02 ${base02}; @define-color base03 ${base03};
+        @define-color base04 ${base04}; @define-color base05 ${base05}; @define-color base06 ${base06}; @define-color base07 ${base07};
 
-          ${builtins.readFile "${pkgs.waybar}/etc/xdg/waybar/style.css"}
-            window#waybar {
-              border-bottom: none;
-              background: #242424
-            }
-
-            * {
-              font-size: 12px;
-      	background: transparent;
-            }
-            button {
-          border: none;
-          border-radius: 0;
-      }
-
-      button:hover {
-          transition-duration: .1s;
-          background: inherit;
-      }
-
-      #workspaces button {
-      color: white;
-      }
-
-      #clock, #pulseaudio, #tray, #battery, #network {
-      background: transparent;
-      color: white;
-      }
-      #pulseaudio.muted {
-      background: transparent;
-      }
-
-
-      #workspaces button.active {
-      color: #24acd4;
-      }
-
-    '';
+        @define-color base08 ${base08}; @define-color base09 ${base09}; @define-color base0A ${base0A}; @define-color base0B ${base0B};
+        @define-color base0C ${base0C}; @define-color base0D ${base0D}; @define-color base0E ${base0E}; @define-color base0F ${base0F};
+      ''
+      + builtins.readFile ././files/waybar.css;
     settings = [
       {
-        height = 20;
+        height = 24;
         layer = "top";
         position = "top";
+        margin-top = 10;
+        margin-left = 10;
+        margin-right = 10;
+        margin-down = 5;
         tray = {spacing = 10;};
         modules-center = ["clock"];
         modules-left = ["hyprland/workspaces"];
         modules-right = [
           "tray"
-          "battery"
           "pulseaudio"
         ];
-        battery = {
-          format = "{capacity}% {icon}";
-          format-alt = "{time} {icon}";
-          format-charging = "{capacity}% ";
-          format-icons = ["" "" "" "" ""];
-          format-plugged = "{capacity}% ";
-          states = {
-            critical = 15;
-            warning = 30;
-          };
-        };
         clock = {
           format = "{:%d-%m-%Y %H:%M}";
-          tooltip-format = "{:%Y-%m-%d | %H:%M}";
-        };
-        cpu = {
-          format = "{usage}% ";
-          tooltip = false;
-        };
-        memory = {format = "{}% ";};
-        network = {
-          interval = 1;
-          format-alt = "{ifname}: {ipaddr}/{cidr}";
-          format-disconnected = "Disconnected ⚠";
-          format-ethernet = "{ifname}: {ipaddr}/{cidr}   up: {bandwidthUpBits} down: {bandwidthDownBits}";
-          format-linked = "{ifname} (No IP) ";
-          format-wifi = "";
         };
         pulseaudio = {
-          format = "{volume}% {icon}";
-          format-bluetooth = "{volume}% {icon}";
-          format-bluetooth-muted = " {icon}";
+          format = "{icon}";
           format-icons = {
-            car = "";
             default = ["" "" ""];
-            handsfree = "";
-            headphones = "";
-            headset = "";
-            phone = "";
-            portable = "";
           };
           format-muted = " (muted)";
-          format-source = "{volume}% ";
-          format-source-muted = "";
           on-click = "pavucontrol";
-        };
-        "sway/mode" = {format = ''<span style="italic">{}</span>'';};
-        temperature = {
-          critical-threshold = 80;
-          format = "{temperatureC}°C {icon}";
-          format-icons = ["" "" ""];
         };
       }
     ];

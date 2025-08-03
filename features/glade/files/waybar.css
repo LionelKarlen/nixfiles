@@ -1,0 +1,31 @@
+* {
+    font-family: DM Sans;
+    font-size: 14px;
+    color: @base05;
+}
+
+window#waybar {
+    border-radius: 0px;
+    background: @base02;
+}
+
+#pulseaudio {
+    margin-right: 17px;
+}
+
+#workspaces button label {
+    font-size: 14px;
+    color: @base05;
+    transition: all 100ms ease-out;
+}
+
+#workspaces button {
+	margin:0;
+	padding: 1px 3px;
+}
+
+#workspaces button.active label {
+    font-weight: bolder;
+    color: @base0B;
+    transition: all 100ms ease-out;
+}

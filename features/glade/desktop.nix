@@ -1,6 +1,4 @@
 {
-  config,
-  lib,
   pkgs,
   pkgs-unstable,
   ...
@@ -14,6 +12,7 @@
       libsecret
       libgnome-keyring
       vlc
+      mpv
     ])
     ++ (with pkgs-unstable; [
       freetube
