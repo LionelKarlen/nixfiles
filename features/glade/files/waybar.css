@@ -13,6 +13,10 @@ window#waybar {
     margin-right: 17px;
 }
 
+#tray {
+	margin-right: 6px;
+}
+
 #workspaces button label {
     font-size: 14px;
     color: @base05;
