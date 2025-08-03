@@ -19,6 +19,7 @@
       url = "github:nix-community/stylix/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
   outputs = {
     nixpkgs,
@@ -29,6 +30,7 @@
     roc,
     zen-browser,
     stylix,
+    spicetify-nix,
     ...
   }: let
     system = "x86_64-linux";
@@ -84,6 +86,7 @@
           nixvim.homeManagerModules.nixvim
           zen-browser.homeModules.twilight
           stylix.homeModules.stylix
+          spicetify-nix.homeManagerModules.spicetify
         ];
         extraSpecialArgs = {
           inherit nix-colors;

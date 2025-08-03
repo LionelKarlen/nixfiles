@@ -13,6 +13,9 @@
       libgnome-keyring
       vlc
       mpv
+      qbittorrent
+      protonvpn-gui
+      proton-pass
     ])
     ++ (with pkgs-unstable; [
       freetube
@@ -22,4 +25,5 @@
   services.gnome-keyring.enable = true;
 
   programs.zen-browser.enable = true;
+  programs.spicetify.enable = true;
 }

@@ -8,6 +8,7 @@
       # Add additional package names here
       "discord"
       "vesktop"
+      "spotify"
     ];
 
   home.packages = with pkgs; [
