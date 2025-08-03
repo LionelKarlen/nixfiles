@@ -124,7 +124,7 @@ in {
       z = zelewidget_cmd;
       zh = "zellij a -c";
     };
-    initExtra = ''
+    initContent = ''
                 zel() {
                   (
                     exec </dev/tty

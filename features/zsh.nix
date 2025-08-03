@@ -21,7 +21,7 @@
       e = "$EDITOR";
       c = "$EDITOR -c \"let g:open_yazi=v:true\"";
     };
-    initExtra = ''
+    initContent = ''
       autoload -Uz add-zsh-hook
         function change_tab_title() {
             local title=$1
