@@ -9,10 +9,13 @@
       "discord"
       "vesktop"
       "spotify"
+      "steam"
+      "steam-unwrapped"
     ];
 
   home.packages = with pkgs; [
     discord
     vesktop
+    steam
   ];
 }

@@ -16,6 +16,13 @@
       qbittorrent
       protonvpn-gui
       proton-pass
+      (prismlauncher.override {
+        additionalLibs = [
+          pkgs.nss
+          pkgs.nspr
+          pkgs.libgbm
+        ];
+      })
     ])
     ++ (with pkgs-unstable; [
       freetube

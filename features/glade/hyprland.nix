@@ -79,6 +79,10 @@
       };
       master = {
       };
+      cursor = {
+        no_hardware_cursors = true;
+        enable_hyprcursor = false;
+      };
       gestures = {
         workspace_swipe = "off";
       };

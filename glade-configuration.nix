@@ -67,7 +67,11 @@
   };
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  xdg.portal.extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-gnome
+    xdg-desktop-portal-hyprland
+  ];
   xdg.portal.config.common.default = "*";
 
   hardware = {
