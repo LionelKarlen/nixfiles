@@ -20,6 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
   outputs = {
     nixpkgs,
@@ -31,6 +32,7 @@
     zen-browser,
     stylix,
     spicetify-nix,
+    nix-minecraft,
     ...
   }: let
     system = "x86_64-linux";
@@ -41,7 +43,16 @@
     nixosConfigurations = {
       tundra = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [./configuration.nix];
+        modules = [
+          ./configuration.nix
+          nix-minecraft.nixosModules.minecraft-servers
+          {
+            nixpkgs.overlays = [
+              nix-minecraft.overlay
+            ];
+          }
+          ./features/minecraft_server.nix
+        ];
       };
       taiga = nixpkgs.lib.nixosSystem {
         inherit system;

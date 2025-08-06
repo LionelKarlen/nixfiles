@@ -70,7 +70,7 @@
   users.users.lionel = {
     isNormalUser = true;
     description = "lionel";
-    extraGroups = ["networkmanager" "wheel" "uinput"];
+    extraGroups = ["networkmanager" "wheel" "uinput" "minecraft"];
     shell = pkgs.zsh;
     packages = with pkgs; [];
   };

@@ -13,7 +13,6 @@
     ./features/zellij.nix
     ./features/lunarvim.nix
     ./features/nu.nix
-    ./features/fonts.nix
     ./features/nixvim.nix
     ./features/typst.nix
     ## Optional packages, main way to install new things
