@@ -19,6 +19,7 @@
     ++ (with pkgs-unstable; [
       just
       super-productivity
+      obs-studio
     ])
     ++ (with roc_pkgs; [
       full
