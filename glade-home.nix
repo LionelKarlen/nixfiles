@@ -25,6 +25,7 @@
     ./features/glade/ghostty.nix
     ./features/glade/sioyek.nix
     ./features/typst.nix
+    ./features/glade/noise.nix
     ### Optional packages, main way to install new things
     #./features/packages.nix
     #./features/systemlibs.nix
