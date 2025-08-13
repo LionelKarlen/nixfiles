@@ -25,9 +25,13 @@
       })
     ])
     ++ (with pkgs-unstable; [
-      freetube
       gnome-network-displays
     ]);
+
+  programs.freetube = {
+    enable = true;
+    package = pkgs.callPackage ../packages/freetube/freetube.nix {};
+  };
 
   services.gnome-keyring.enable = true;
 
