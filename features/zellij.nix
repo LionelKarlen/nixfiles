@@ -104,7 +104,6 @@ in {
   programs.zsh = {
     shellAliases = {
       zlj = "zellij -l welcome";
-      z = zelewidget_cmd;
       zh = "zellij a -c";
     };
     initContent = ''

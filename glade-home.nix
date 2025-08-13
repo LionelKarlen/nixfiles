@@ -28,6 +28,7 @@
     ./features/glade/noise.nix
     ./features/haskell.nix
     ./features/glade/nh.nix
+    ./features/zoxide.nix
     ### Optional packages, main way to install new things
     #./features/packages.nix
     #./features/systemlibs.nix

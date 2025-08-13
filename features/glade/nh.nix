@@ -1,6 +1,6 @@
 {...}: {
   programs.nh = {
     enable = true;
-    flake = "/home/lionel/.glade/flake.nix";
+    flake = "/home/lionel/.glade";
   };
 }
