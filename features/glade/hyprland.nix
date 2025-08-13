@@ -93,8 +93,7 @@
       bind = [
         # execution
         "$mainMod, RETURN, exec, ghostty"
-        "$mainMod, N, exec, ghostty"
-        "$mainMod, I, exec, ghostty"
+        "$mainMod SHIFT, COMMA, exec, ghostty"
         "$mainMod SHIFT, B, exec, zen --private-window"
         "$mainMod, B, exec, zen"
         "$mainMod, E, exec, dolphin"
