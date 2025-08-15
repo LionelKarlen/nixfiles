@@ -29,6 +29,7 @@
     ./features/haskell.nix
     ./features/glade/nh.nix
     ./features/zoxide.nix
+    ./features/jj.nix
     ### Optional packages, main way to install new things
     #./features/packages.nix
     #./features/systemlibs.nix

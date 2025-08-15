@@ -15,7 +15,7 @@
     rev = "c3c5af672b525eba7ca17aceb67b6f4808d40957";
     hash = "sha256-E3Rr6mlBqXSnlPibzUzQGU+HtQpehC0XxO19+y39I84=";
   }) {inherit pkgs;};
-  zelewidget_cmd = "zelewidget documents documents/programming documents/school";
+  zelewidget_cmd = "zelewidget Documents Documents/programming Documents/school";
 in {
   programs.zellij = {
     enable = true;
@@ -63,6 +63,13 @@ in {
           "bind \"Alt 4\"" = {GoToTab = 4;};
           "bind \"Alt 5\"" = {GoToTab = 5;};
           "bind \"Alt 6\"" = {GoToTab = 6;};
+          "bind \"Ctrl w\"" = {
+            Run = {
+              _args = ["zelewidget" "Documents" "Documents/programing" "Documents/school"];
+              floating = true;
+              close_on_exit = true;
+            };
+          };
         };
 
         tmux = {
@@ -122,14 +129,5 @@ in {
                 bindkey  "^w" zel
                 # bindkey -s "^w" "(z)\n"
     '';
-  };
-  programs.nixvim = {
-    keymaps = [
-      {
-        mode = "n";
-        key = "<C-w>";
-        action = "<cmd>!${zelewidget_cmd}<CR>";
-      }
-    ];
   };
 }
