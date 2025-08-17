@@ -6,6 +6,7 @@
         name = "Lionel Karlen";
         email = "lionel.karlen@protonmail.com";
       };
+      ui.default-command = "log";
     };
   };
 }

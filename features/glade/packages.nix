@@ -15,6 +15,9 @@
       zip
       fzf
       fd
+      nim
+      nimble
+      gcc
     ])
     ++ (with pkgs-unstable; [
       just

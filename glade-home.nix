@@ -8,7 +8,7 @@
     #./features/bash.nix
     ./features/zsh.nix
     ./features/yazi.nix
-    #./features/tmux.nix
+    ./features/tmux.nix
     ./features/git.nix
     ./features/zellij.nix
     #./features/lunarvim.nix
