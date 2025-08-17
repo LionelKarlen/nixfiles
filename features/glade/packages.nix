@@ -18,6 +18,7 @@
       nim
       nimble
       gcc
+      harper
     ])
     ++ (with pkgs-unstable; [
       just

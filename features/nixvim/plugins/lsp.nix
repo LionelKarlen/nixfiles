@@ -14,21 +14,38 @@
             formatterMode = "typstyle";
           };
         };
+
         #nil-ls.enable=true;
+
         nixd.enable = true;
+
         svelte = {
           enable = true;
           filetypes = [
             "svelte"
           ];
         };
+
         roc_ls = {
           enable = true;
           package = roc_pkgs.full;
         };
+
         nim_langserver = {
           enable = true;
         };
+
+        harper_ls = {
+          enable = true;
+          autostart = true;
+          filetypes = [
+            "*"
+          ];
+          settings = {
+            dialect = "British";
+          };
+        };
+
         emmet_language_server = {
           enable = true;
           extraOptions = {
@@ -50,7 +67,9 @@
             ];
           };
         };
+
         ts_ls.enable = true;
+
         rust_analyzer = {
           enable = true;
           installCargo = false;
