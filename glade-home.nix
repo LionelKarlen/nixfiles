@@ -30,6 +30,7 @@
     ./features/glade/nh.nix
     ./features/zoxide.nix
     ./features/jj.nix
+    ./features/eza.nix
     ### Optional packages, main way to install new things
     #./features/packages.nix
     #./features/systemlibs.nix
