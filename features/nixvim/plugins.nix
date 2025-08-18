@@ -14,6 +14,7 @@
     ./plugins/trouble.nix
     ./plugins/lean.nix
     ./plugins/lsp_saga.nix
+    ./plugins/harpoon.nix
   ];
 
   programs.nixvim = {
