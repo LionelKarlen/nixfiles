@@ -19,6 +19,7 @@
       nimble
       gcc
       harper
+      qmk
     ])
     ++ (with pkgs-unstable; [
       just

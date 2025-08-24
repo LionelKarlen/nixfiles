@@ -16,6 +16,7 @@
       qbittorrent
       protonvpn-gui
       proton-pass
+      scarab
       (prismlauncher.override {
         additionalLibs = [
           pkgs.nss
