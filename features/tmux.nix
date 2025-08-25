@@ -1,36 +1,104 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  list_cmd = "sesh list -i | gum filter --limit 1 --no-sort --fuzzy";
+in {
+  home.packages = with pkgs; [
+    sesh
+    gum
+  ];
   programs.tmux = {
     enable = true;
-    prefix = "C-o";
-    terminal = "screen-256color";
-    plugins = with pkgs.tmuxPlugins; [
-      mode-indicator
-    ];
     extraConfig = ''
-      set -g status-right '%Y-%m-%d %H:%M #{tmux_mode_indicator}'
-      # prompt to display when tmux prefix key is pressed
-      set -g @mode_indicator_prefix_prompt ' WAIT '
+      unbind-key -an
+      unbind-key -a
+      set -g default-terminal "tmux-256color"
+      set -ga terminal-overrides ",*256col*:Tc"
+      set -g set-clipboard on
+      set -g escape-time 0
 
-      # prompt to display when tmux is in copy mode
-      set -g @mode_indicator_copy_prompt ' COPY '
+      set -g base-index 1
+      set -g renumber-windows on
+      set -g status-right ""
+      set -g status-interval 1
 
-      # prompt to display when tmux has synchronized panes
-      set -g @mode_indicator_sync_prompt ' SYNC '
+      set -g window-status-format "#I: #W"
+      set -g window-status-current-format "#I: #W"
+      set -g status-left-length 200
+      set-window-option -g window-status-current-style fg=blue,bright,bold
 
-      # prompt to display when tmux is in normal mode
-      set -g @mode_indicator_empty_prompt ' TMUX '
+      set -g status-left "#{?client_prefix,#[bg=green] ,#[bg=blue] }#[bg=default] #{session_name} "
 
-      # style values for prefix prompt
-      set -g @mode_indicator_prefix_mode_style 'bg=blue,fg=black'
+      # binds
+      set -g prefix C-o
+      bind t new-window -c "#{pane_current_path}"
+      bind d detach
+      bind r source-file ~/.config/tmux/tmux.conf
+      bind q killp
 
-      # style values for copy prompt
-      set -g @mode_indicator_copy_mode_style 'bg=yellow,fg=black'
+      # vim mode copy
+      set-window-option -g mode-keys vi
+      bind -T copy-mode-vi 'v' send -X begin-selection
+      # TODO: Update this with proper copy command
+      # bind -T copy-mode-vi 'y' send -X copy-pipe-and-cancel ""
+      unbind -T copy-mode-vi MouseDragEnd1Pane
 
-      # style values for sync prompt
-      set -g @mode_indicator_sync_mode_style 'bg=red,fg=black'
+      # navigation
+      bind -n M-1 selectw -t 1
+      bind -n M-2 selectw -t 2
+      bind -n M-3 selectw -t 3
+      bind -n M-4 selectw -t 4
+      bind -n M-5 selectw -t 5
+      bind -n M-6 selectw -t 6
+      bind -n M-7 selectw -t 7
 
-      # style values for empty prompt
-      set -g @mode_indicator_empty_mode_style 'bg=cyan,fg=black'
+      bind -n C-k display-popup -E -w 60% "sesh connect \"$(${list_cmd})\""
+    '';
+  };
+
+  xdg.configFile."sesh/startup.sh".text = ''
+    tmux new-window -d
+    tmux send-keys -t 0 "c" Enter
+  '';
+
+  xdg.configFile."sesh/sesh.toml".text = ''
+    [[session]]
+    name = "nixfiles"
+    path = "~/.glade/"
+
+    [default_session]
+    startup_command = "source ~/.config/sesh/startup.sh"
+
+    [[window]]
+    name = "nvim"
+    startup_script="c"
+
+    [[window]]
+    name = "zsh"
+    startup_script="ls"
+
+    [[window]]
+    name = "watch"
+    startup_script="ls"
+  '';
+
+  programs.zsh = {
+    initContent = ''
+      function sesh-sessions() {
+        {
+          exec </dev/tty
+          exec <&1
+          local session
+          session=$(${list_cmd})
+          zle reset-prompt > /dev/null 2>&1 || true
+          [[ -z "$session" ]] && return
+          sesh connect $session
+        }
+      }
+
+      zle -N sesh-sessions
+      bindkey "^k" sesh-sessions
+      bindkey -M vicmd "^k" sesh-sessions
+      bindkey -M viins "^k" sesh-sessions
+
     '';
   };
 }
