@@ -34,7 +34,8 @@
 
     targets = {
       # disabling nixvim stops the nixvim internal theming from working too, so just ignore it
-      neovim.enable = false;
+      # nixvim.enable = false;
+      # neovim.enable = false;
     };
   };
 }

@@ -39,7 +39,7 @@
     colorschemes = {
       base16 = {
         enable = true;
-        colorscheme = "ayu-light";
+        colorscheme = "atelier-estuary-light";
       };
     };
   };
