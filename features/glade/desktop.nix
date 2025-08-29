@@ -17,6 +17,7 @@
       protonvpn-gui
       proton-pass
       scarab
+      calibre
       (prismlauncher.override {
         additionalLibs = [
           pkgs.nss

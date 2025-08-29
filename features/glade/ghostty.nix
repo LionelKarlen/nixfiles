@@ -1,6 +1,7 @@
 {...}: {
   programs.ghostty = {
     enable = true;
+    clearDefaultKeybinds = true;
     settings = {
       font-family = "Hasklug Nerd Font";
       font-size = 13;
@@ -10,8 +11,13 @@
       window-padding-balance = true;
       maximize = true;
       cursor-invert-fg-bg = true;
+      clipboard-read = "allow";
+      clipboard-write = "allow";
       command = "zsh";
-      keybind = "clear";
+      keybind = [
+        "ctrl+shift+v=paste_from_clipboard"
+        "ctrl+shift+c=copy_to_clipboard"
+      ];
     };
   };
 }
