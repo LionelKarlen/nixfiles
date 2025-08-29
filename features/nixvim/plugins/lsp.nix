@@ -8,6 +8,7 @@
       enable = true;
       inlayHints = true;
       servers = {
+        dartls.enable = true;
         tinymist = {
           enable = true;
           settings = {
