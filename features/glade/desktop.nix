@@ -3,6 +3,12 @@
   pkgs-unstable,
   ...
 }: {
+  nixpkgs.overlays = [
+    (final: prev: {
+      kanri = prev.callPackage ../packages/kanri/kanri.nix {};
+    })
+  ];
+
   home.packages =
     (with pkgs; [
       zathura
@@ -18,6 +24,7 @@
       proton-pass
       scarab
       calibre
+      kanri
       (prismlauncher.override {
         additionalLibs = [
           pkgs.nss
