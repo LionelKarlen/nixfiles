@@ -82,6 +82,7 @@
         inherit pkgs;
         modules = [
           ./eepy.nix
+          stylix.homeModules.stylix
           nixvim.homeManagerModules.nixvim
         ];
         extraSpecialArgs = {

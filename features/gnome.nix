@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    gnome.gnome-tweaks
+    gnome-tweaks
     gnomeExtensions.dash-to-dock
     gnomeExtensions.paperwm
   ];
@@ -19,10 +19,6 @@
     cursorTheme = {
       name = "Numix-Cursor";
       package = pkgs.numix-cursor-theme;
-    };
-    theme = {
-      name = "Qogir-Dark";
-      package = pkgs.qogir-theme;
     };
     iconTheme = {
       name = "Papirus-Dark";

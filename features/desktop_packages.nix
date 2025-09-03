@@ -13,7 +13,6 @@
       protonvpn-gui
       kstars
       brave
-      dolphin
       libsecret
       libgnome-keyring
       sioyek

@@ -1,7 +1,12 @@
-{config, lib, pkgs,...}:
 {
-	home.packages = with pkgs; [
-		nerdfonts
-		fira-code-nerdfont
-	];
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  home.packages = with pkgs.nerd-fonts; [
+    hasklug
+    blex-mono
+  ];
+  fonts.fontconfig.enable = true;
 }

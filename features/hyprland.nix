@@ -12,7 +12,6 @@
     pkgs.xwayland
     pkgs.swww
     pkgs.networkmanagerapplet
-    pkgs.nerdfonts
     pkgs.kdePackages.breeze
     pkgs.pavucontrol
   ];
@@ -40,7 +39,7 @@
         gaps_in = 3;
         gaps_out = 2;
         layout = "dwindle";
-        "col.active_border" = "0xff24acd4";
+        # "col.active_border" = "0xff24acd4";
       };
       decoration = {
         rounding = 0;
