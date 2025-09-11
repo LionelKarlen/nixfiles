@@ -10,7 +10,6 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-    roc.url = "github:roc-lang/roc";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,90 +21,88 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
-  outputs = {
-    nixpkgs,
-    nixpkgs-unstable,
-    home-manager,
-    nix-colors,
-    nixvim,
-    roc,
-    zen-browser,
-    stylix,
-    spicetify-nix,
-    nix-minecraft,
-    ...
-  }: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-    pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
-    roc_pkgs = roc.packages.${system};
-  in {
-    nixosConfigurations = {
-      tundra = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./configuration.nix
-          nix-minecraft.nixosModules.minecraft-servers
-          {
-            nixpkgs.overlays = [
-              nix-minecraft.overlay
-            ];
-          }
-          ./features/minecraft_server.nix
-        ];
+  outputs =
+    {
+      nixpkgs,
+      nixpkgs-unstable,
+      home-manager,
+      nix-colors,
+      nixvim,
+      zen-browser,
+      stylix,
+      spicetify-nix,
+      nix-minecraft,
+      ...
+    }:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+    in
+    {
+      nixosConfigurations = {
+        tundra = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./hosts/tundra/configuration.nix
+            nix-minecraft.nixosModules.minecraft-servers
+            {
+              nixpkgs.overlays = [
+                nix-minecraft.overlay
+              ];
+            }
+            ./features/minecraft_server.nix
+          ];
+        };
+        taiga = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ ./hosts/taiga/configuration.nix ];
+        };
+        glade = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./hosts/glade/configuration.nix
+          ];
+        };
       };
-      taiga = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [./taiga-configuration.nix];
-      };
-      glade = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./glade-configuration.nix
-        ];
+      homeConfigurations = {
+        "lionel@tundra" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./hosts/tundra/home.nix
+            nixvim.homeManagerModules.nixvim
+          ];
+          extraSpecialArgs = {
+            inherit nix-colors;
+            inherit pkgs-unstable;
+          };
+        };
+        "eepy@taiga" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./hosts/taiga/home.nix
+            stylix.homeModules.stylix
+            nixvim.homeManagerModules.nixvim
+          ];
+          extraSpecialArgs = {
+            inherit nix-colors;
+            inherit pkgs-unstable;
+          };
+        };
+        "lionel@glade" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./hosts/glade/home.nix
+            nixvim.homeManagerModules.nixvim
+            zen-browser.homeModules.twilight
+            stylix.homeModules.stylix
+            spicetify-nix.homeManagerModules.spicetify
+          ];
+          extraSpecialArgs = {
+            inherit nix-colors;
+            inherit pkgs-unstable;
+          };
+        };
       };
     };
-    homeConfigurations = {
-      lionel = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./home.nix
-          nixvim.homeManagerModules.nixvim
-        ];
-        extraSpecialArgs = {
-          inherit nix-colors;
-          inherit pkgs-unstable;
-          inherit roc_pkgs;
-        };
-      };
-      eepy = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./eepy.nix
-          stylix.homeModules.stylix
-          nixvim.homeManagerModules.nixvim
-        ];
-        extraSpecialArgs = {
-          inherit nix-colors;
-          inherit pkgs-unstable;
-          inherit roc_pkgs;
-        };
-      };
-      "lionel@glade" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./glade-home.nix
-          nixvim.homeManagerModules.nixvim
-          zen-browser.homeModules.twilight
-          stylix.homeModules.stylix
-          spicetify-nix.homeManagerModules.spicetify
-        ];
-        extraSpecialArgs = {
-          inherit nix-colors;
-          inherit pkgs-unstable;
-          inherit roc_pkgs;
-        };
-      };
-    };
-  };
 }

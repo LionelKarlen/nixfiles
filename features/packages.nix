@@ -3,7 +3,8 @@
   pkgs-unstable,
   roc_pkgs,
   ...
-}: {
+}:
+{
   home.packages =
     (with pkgs; [
       ranger
