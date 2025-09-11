@@ -70,7 +70,7 @@
           inherit pkgs;
           modules = [
             ./hosts/tundra/home.nix
-            nixvim.homeManagerModules.nixvim
+            nixvim.homeModules.nixvim
           ];
           extraSpecialArgs = {
             inherit nix-colors;
@@ -82,7 +82,7 @@
           modules = [
             ./hosts/taiga/home.nix
             stylix.homeModules.stylix
-            nixvim.homeManagerModules.nixvim
+            nixvim.homeModules.nixvim
           ];
           extraSpecialArgs = {
             inherit nix-colors;
@@ -93,7 +93,7 @@
           inherit pkgs;
           modules = [
             ./hosts/glade/home.nix
-            nixvim.homeManagerModules.nixvim
+            nixvim.homeModules.nixvim
             zen-browser.homeModules.twilight
             stylix.homeModules.stylix
             spicetify-nix.homeManagerModules.spicetify

@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   home.packages = with pkgs.nerd-fonts; [
     hasklug
@@ -38,6 +43,10 @@
       # nixvim.enable = false;
       # neovim.enable = false;
       helix.enable = false;
+
+      firefox = lib.mkIf config.applications.browsers.firefox.enable {
+        profileNames = [ "default" ];
+      };
     };
   };
 }

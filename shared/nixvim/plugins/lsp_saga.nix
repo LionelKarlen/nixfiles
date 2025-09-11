@@ -2,9 +2,11 @@
   programs.nixvim = {
     plugins.lspsaga = {
       enable = true;
-      lightbulb.enable = false;
-      implement.enable = false;
-      symbolInWinbar.enable = false;
+      settings = {
+        lightbulb.enable = false;
+        implement.enable = false;
+        symbolInWinbar.enable = false;
+      };
     };
     keymaps = [
       {
