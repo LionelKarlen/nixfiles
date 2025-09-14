@@ -2,7 +2,8 @@
 {
   programs.helix.extraPackages = with pkgs; [
     nixd
-    dart
+    marksman
+    harper
   ];
   programs.helix.languages = {
     language = [
@@ -15,11 +16,29 @@
         name = "dart";
         auto-format = true;
       }
+      {
+        name = "markdown";
+        language-servers = [
+          "marksman"
+          "harper-ls"
+        ];
+      }
     ];
 
     language-server = {
       nixd = {
         command = "nixd";
+      };
+      harper-ls = {
+        command = "harper-ls";
+        args = [ "--stdio" ];
+        config = {
+          harper-ls = {
+            linters = {
+              long_sentences = false;
+            };
+          };
+        };
       };
     };
   };
