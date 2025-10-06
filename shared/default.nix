@@ -15,6 +15,7 @@
     ./eza.nix
     ./jj.nix
     ./starship.nix
+    ./nh.nix
   ];
 
   nixvim.enable = lib.mkDefault true;

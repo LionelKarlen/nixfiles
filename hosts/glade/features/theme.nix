@@ -44,9 +44,9 @@
       # neovim.enable = false;
       helix.enable = false;
 
-      firefox = lib.mkIf config.applications.browsers.firefox.enable {
-        profileNames = [ "default" ];
-      };
+      # firefox = lib.mkIf config.applications.browsers.firefox.enable {
+      #   profileNames = [ "default" ];
+      # };
     };
   };
 }
