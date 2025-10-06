@@ -15,6 +15,7 @@
     (with pkgs; [
       scarab
       qmk
+      cowsay
     ])
     ++ (with pkgs-unstable; [
       obs-studio

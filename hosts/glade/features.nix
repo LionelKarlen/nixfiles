@@ -1,12 +1,10 @@
-{ lib, ... }:
-{
+{lib, ...}: {
   imports = [
     ../../shared/default.nix
     ./features/default.nix
   ];
 
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
+  nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
       "steam"
       "steam-unwrapped"
@@ -64,5 +62,6 @@
     rust.enable = true;
     cpp.enable = true;
     deno.enable = true;
+    nim.enable = true;
   };
 }

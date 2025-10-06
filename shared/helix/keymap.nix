@@ -23,5 +23,8 @@
         "align_view_center"
       ];
     };
+    insert = {
+      "C-l" = "completion";
+    };
   };
 }
