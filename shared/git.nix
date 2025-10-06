@@ -8,16 +8,28 @@
   options = {
     git.enable = lib.mkEnableOption "enable git";
   };
-  # TODO: Move credentials to separate module
-  imports = [
-    # ./creds.nix
-  ];
   config = lib.mkIf config.git.enable {
-    # TODO: Move credentials to separate module
     home.packages = with pkgs; [
       git
       git-credential-manager
+      pass
+      pinentry-tty
     ];
+
+    programs.gpg = {
+      enable = true;
+      settings = {
+        use-agent = true;
+        batch-mode = false;
+        pinentry-mode = "ask";
+      };
+    };
+
+    services.gpg-agent = {
+      enable = true;
+      enableSshSupport = true;
+      pinentry.package = pkgs.pinentry-curses;
+    };
 
     programs.git = {
       enable = true;
@@ -38,7 +50,6 @@
             ];
           };
         };
-        # TODO: Move credentials to separate module
         credential = {
           helper = "manager";
           "https://github.com".username = "lionelkarlen";
@@ -48,6 +59,10 @@
     };
 
     programs.zsh = {
+      initContent = ''
+        export GPG_TTY=$(tty)
+      '';
+
       shellAliases = {
         gl = "git log --oneline";
         gc = "git commit";
