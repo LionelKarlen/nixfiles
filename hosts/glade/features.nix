@@ -17,7 +17,7 @@
 
   zoxide.enable = true;
   helix.enable = true;
-  yazi.enable = false;
+  yazi.enable = true;
   typst.enable = true;
   eza.enable = true;
   jj.enable = true;

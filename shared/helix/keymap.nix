@@ -3,7 +3,10 @@
   programs.helix.settings.keys = {
     normal = {
       ";" = ":w";
-      "," = "collapse_selection";
+      "," = [
+        "collapse_selection"
+        "keep_primary_selection"
+      ];
       "space" = {
         "o" = "file_picker";
         "l" = "buffer_picker";

@@ -5,6 +5,7 @@
     ./editor.nix
     ./keymap.nix
     ./lsp.nix
+    ./plugins.nix
   ];
   options = {
     helix.enable = lib.mkEnableOption "enable helix";

@@ -43,6 +43,7 @@
       # nixvim.enable = false;
       # neovim.enable = false;
       helix.enable = false;
+      yazi.enable = false;
 
       # firefox = lib.mkIf config.applications.browsers.firefox.enable {
       #   profileNames = [ "default" ];
