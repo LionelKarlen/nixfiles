@@ -155,7 +155,7 @@
       ];
       exec-once = [
         "hyprctl setcursor Bibita-Modern-Ice 24"
-        "bash ~/.glade/hosts/glade/features/files/hyprland_startup.sh"
+        "bash ~/.nixfiles/hosts/glade/features/files/hyprland_startup.sh"
       ];
     };
   };

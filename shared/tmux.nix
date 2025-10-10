@@ -73,7 +73,7 @@ in
     xdg.configFile."sesh/sesh.toml".text = ''
       [[session]]
       name = "nixfiles"
-      path = "~/.glade/"
+      path = "~/.nixfiles/"
 
       [default_session]
       startup_command = "source ~/.config/sesh/startup.sh"
