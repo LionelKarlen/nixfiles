@@ -16,6 +16,7 @@
       scarab
       qmk
       cowsay
+      libresplit
     ])
     ++ (with pkgs-unstable; [
       obs-studio

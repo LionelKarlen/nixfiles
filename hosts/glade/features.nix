@@ -1,16 +1,19 @@
-{lib, ...}: {
+{ lib, ... }:
+{
   imports = [
     ../../shared/default.nix
     ./features/default.nix
   ];
 
-  nixpkgs.config.allowUnfreePredicate = pkg:
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
     builtins.elem (lib.getName pkg) [
       "steam"
       "steam-unwrapped"
       "spotify"
       "discord"
       "vesktop"
+      "discord-canary"
     ];
 
   zoxide.enable = true;
