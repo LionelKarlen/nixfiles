@@ -52,7 +52,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
   '';
 
   postInstall = ''
-    wrapProgram $out/bin/kanri --set WEBKIT_DISABLE_DMABUF_RENDERER 1
+    wrapProgram $out/bin/kanri --set WEBKIT_DISABLE_DMABUF_RENDERER 1 --set WAYLAND_DISPLAY no
   '';
 
   checkFlags = [
