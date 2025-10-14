@@ -17,6 +17,7 @@
       qmk
       cowsay
       libresplit
+      aoc-cli
     ])
     ++ (with pkgs-unstable; [
       obs-studio

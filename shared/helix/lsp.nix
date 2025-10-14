@@ -5,6 +5,9 @@
     marksman
     harper
   ];
+  programs.helix.settings.editor.lsp = {
+    display-inlay-hints = true;
+  };
   programs.helix.languages = {
     language = [
       {
