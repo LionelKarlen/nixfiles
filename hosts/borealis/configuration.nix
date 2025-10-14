@@ -1,11 +1,17 @@
-{modulesPath, config, pkgs, ...}: {
+{
+  modulesPath,
+  config,
+  pkgs,
+  ...
+}:
+{
   system.stateVersion = "24.11";
   imports = [
     (modulesPath + "/profiles/qemu-guest.nix")
     ./services/default.nix
   ];
 
-  networking.hostName="borealis";
+  networking.hostName = "borealis";
 
   boot.loader.grub = {
     efiSupport = true;
@@ -19,28 +25,31 @@
   users.users.alan = {
     isNormalUser = true;
     description = "alan";
-    extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = with pkgs; [ ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFCsUAbZ4fhMtYJL2b710Db6n8+Sj4PyTQ4L7/JVW1yL lionel@tundra"
     ];
   };
-  
-  systemd.extraConfig = ''DefaultStartLimitIntervalSec=30s
-  DefaultStartLimitBurst=30s'';
+
+  systemd.extraConfig = ''
+    DefaultStartLimitIntervalSec=30s
+      DefaultStartLimitBurst=30s'';
 
   nix.settings.experimental-features = [
-  "nix-command"
-  "flakes"
+    "nix-command"
+    "flakes"
   ];
 
-
   services.openssh = {
-    enable=true;
+    enable = true;
     ports = [ 505 ];
     settings = {
-      PermitRootLogin="no";
-      PasswordAuthentication=false;
+      PermitRootLogin = "no";
+      PasswordAuthentication = false;
     };
   };
   users.users.root.openssh.authorizedKeys.keys = [
