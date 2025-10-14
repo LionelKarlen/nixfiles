@@ -20,6 +20,10 @@
     };
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    disko = {
+    	url = "github:nix-community/disko";
+    	inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
@@ -32,6 +36,7 @@
       stylix,
       spicetify-nix,
       nix-minecraft,
+      disko,
       ...
     }:
     let
@@ -64,6 +69,14 @@
             ./hosts/glade/configuration.nix
           ];
         };
+	borealis = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+	    disko.nixosModules.disko
+            ./hosts/borealis/configuration.nix
+	    ./hosts/borealis/disk-config.nix
+          ];
+        };
       };
       homeConfigurations = {
         "lionel@tundra" = home-manager.lib.homeManagerConfiguration {
@@ -77,6 +90,20 @@
             inherit pkgs-unstable;
           };
         };
+	"alan@borealis" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./hosts/borealis/home.nix
+            nixvim.homeModules.nixvim
+		zen-browser.homeModules.twilight
+            stylix.homeModules.stylix
+            spicetify-nix.homeManagerModules.spicetify
+          ];
+          extraSpecialArgs = {
+            inherit pkgs-unstable;
+          };
+        };
+
         "eepy@taiga" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
