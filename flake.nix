@@ -21,8 +21,8 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     disko = {
-    	url = "github:nix-community/disko";
-    	inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs =
@@ -43,6 +43,12 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+      homeModules = [
+        nixvim.homeModules.nixvim
+        zen-browser.homeModules.twilight
+        stylix.homeModules.stylix
+        spicetify-nix.homeManagerModules.spicetify
+      ];
     in
     {
       nixosConfigurations = {
@@ -69,12 +75,12 @@
             ./hosts/glade/configuration.nix
           ];
         };
-	borealis = nixpkgs.lib.nixosSystem {
+        borealis = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
-	    disko.nixosModules.disko
+            disko.nixosModules.disko
             ./hosts/borealis/configuration.nix
-	    ./hosts/borealis/disk-config.nix
+            ./hosts/borealis/disk-config.nix
           ];
         };
       };
@@ -83,22 +89,19 @@
           inherit pkgs;
           modules = [
             ./hosts/tundra/home.nix
-            nixvim.homeModules.nixvim
-          ];
+          ]
+          ++ homeModules;
           extraSpecialArgs = {
             inherit nix-colors;
             inherit pkgs-unstable;
           };
         };
-	"alan@borealis" = home-manager.lib.homeManagerConfiguration {
+        "alan@borealis" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
             ./hosts/borealis/home.nix
-            nixvim.homeModules.nixvim
-		zen-browser.homeModules.twilight
-            stylix.homeModules.stylix
-            spicetify-nix.homeManagerModules.spicetify
-          ];
+          ]
+          ++ homeModules;
           extraSpecialArgs = {
             inherit pkgs-unstable;
           };
@@ -108,9 +111,8 @@
           inherit pkgs;
           modules = [
             ./hosts/taiga/home.nix
-            stylix.homeModules.stylix
-            nixvim.homeModules.nixvim
-          ];
+          ]
+          ++ homeModules;
           extraSpecialArgs = {
             inherit nix-colors;
             inherit pkgs-unstable;
@@ -120,11 +122,8 @@
           inherit pkgs;
           modules = [
             ./hosts/glade/home.nix
-            nixvim.homeModules.nixvim
-            zen-browser.homeModules.twilight
-            stylix.homeModules.stylix
-            spicetify-nix.homeManagerModules.spicetify
-          ];
+          ]
+          ++ homeModules;
           extraSpecialArgs = {
             inherit nix-colors;
             inherit pkgs-unstable;
