@@ -58,7 +58,7 @@ in
         bind -n M-3 selectw -t 3
         bind -n M-4 selectw -t 4
         bind -n M-5 selectw -t 5
-        bind -n M-6 electw -t 6
+        bind -n M-6 selectw -t 6
         bind -n M-7 selectw -t 7
 
         bind -n C-k display-popup -E -w 60% "sesh connect \"$(${list_cmd})\""
@@ -67,7 +67,7 @@ in
 
     xdg.configFile."sesh/startup.sh".text = ''
       tmux new-window -d
-      tmux send-keys -t 0 "c" Enter
+      tmux send-keys -t 0 "clear" Enter
     '';
 
     xdg.configFile."sesh/sesh.toml".text = ''
@@ -77,18 +77,6 @@ in
 
       [default_session]
       startup_command = "source ~/.config/sesh/startup.sh"
-
-      [[window]]
-      name = "nvim"
-      startup_script="c"
-
-      [[window]]
-      name = "zsh"
-      startup_script="ls"
-
-      [[window]]
-      name = "watch"
-      startup_script="ls"
     '';
 
     programs.zsh = {
