@@ -3,7 +3,6 @@
   imports = [
     ./applications/default.nix
     ./programming/default.nix
-    ./services/default.nix
     ./nixvim/default.nix
     ./helix/default.nix
     ./utilities.nix
