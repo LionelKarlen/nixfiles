@@ -26,6 +26,23 @@
           "harper-ls"
         ];
       }
+      {
+        name = "tsx";
+        auto-format = true;
+      }
+      {
+        name = "typescript";
+        auto-format = true;
+      }
+      {
+        name = "typst";
+        auto-format = true;
+        formatter.command = "${pkgs.typstyle}/bin/typstyle";
+        language-servers = [
+          "tinymist"
+          "harper-ls"
+        ];
+      }
     ];
 
     language-server = {
