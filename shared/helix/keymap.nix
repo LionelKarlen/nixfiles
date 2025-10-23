@@ -7,6 +7,9 @@
         "collapse_selection"
         "keep_primary_selection"
       ];
+      "g" = {
+        "u" = "jump_backward";
+      };
       "space" = {
         "o" = "file_picker";
         "l" = "buffer_picker";
