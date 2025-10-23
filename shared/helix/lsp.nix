@@ -34,9 +34,6 @@
           "typescript-language-server"
           "emmet-lsp"
         ];
-        auto-pairs = {
-          "<" = ">";
-        };
       }
       {
         name = "typescript";
