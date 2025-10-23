@@ -4,6 +4,7 @@
     nixd
     marksman
     harper
+    emmet-language-server
   ];
   programs.helix.settings.editor.lsp = {
     display-inlay-hints = true;
@@ -29,6 +30,13 @@
       {
         name = "tsx";
         auto-format = true;
+        language-servers = [
+          "typescript-language-server"
+          "emmet-lsp"
+        ];
+        auto-pairs = {
+          "<" = ">";
+        };
       }
       {
         name = "typescript";
@@ -57,6 +65,16 @@
             linters = {
               long_sentences = false;
             };
+          };
+        };
+      };
+      emmet-lsp = {
+        command = "emmet-language-server";
+        args = [ "--stdio" ];
+        config = {
+          includeLanguages = {
+            "javascriptreact" = "html";
+            "typescriptreact" = "html";
           };
         };
       };
