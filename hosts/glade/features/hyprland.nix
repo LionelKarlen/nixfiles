@@ -35,6 +35,7 @@
         "HDMI-A-1,2560x1440,2560x0,1"
       ];
       input = {
+        sensitivity = 0.2;
         kb_layout = "ch";
         kb_variant = "de";
         follow_mouse = 1;
