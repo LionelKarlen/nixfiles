@@ -3,6 +3,11 @@ let
   inherit (pkgs) rnnoise-plugin;
 in
 {
+
+  home.packages = with pkgs; [
+    easyeffects
+  ];
+
   xdg.configFile."pipewire/pipewire.conf.d/99-rnnoise.conf" = {
     text = builtins.toJSON {
       "context.properties" = {
