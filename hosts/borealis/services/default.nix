@@ -5,6 +5,7 @@ in
 {
   imports = [
     ../../../shared/services/default.nix
+    ./icb.nix
   ];
 
   shared_services = {
