@@ -9,6 +9,7 @@
     ./rofi.nix
     ./theme.nix
     ./noise.nix
+    ./notifications.nix
   ];
 
   home.packages =
