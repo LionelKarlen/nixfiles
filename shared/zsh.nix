@@ -9,7 +9,7 @@
       shellAliases = {
         hms = "home-manager switch --flake /home/$(whoami)/.$(hostname)/";
         e = "$EDITOR";
-        c = ''$EDITOR -c "let g:open_yazi=v:true"'';
+        c = ''$EDITOR -c ":Yazi"'';
       };
       initContent = ''
         KEYTIMEOUT=10

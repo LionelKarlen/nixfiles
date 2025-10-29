@@ -18,17 +18,6 @@
         '';
       }
       {
-        event = [ "VimEnter" ];
-        desc = "Open yazi on neovim enter";
-        callback.__raw = ''
-          function()
-            if vim.g.open_yazi ~= nil then
-              vim.cmd(":Yazi")
-            end
-          end
-        '';
-      }
-      {
         event = [ "BufEnter" ];
         pattern = [ "COMMIT_EDITMSG" ];
         callback.__raw = ''
