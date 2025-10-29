@@ -13,7 +13,7 @@ lib.mkIf config.applications.files.sioyek.enable {
       buildInputs = [ pkgs.makeWrapper ];
       postBuild = ''
         wrapProgram $out/bin/sioyek \
-          --set QT_QPA_PLATFORM xcb
+          --set QT_QPA_PLATFORM xcb --set XCURSOR_SIZE 24
       '';
     };
   };
