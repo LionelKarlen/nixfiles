@@ -17,6 +17,7 @@
       kdePackages.breeze
       pavucontrol
       hyprshot
+      wl-clipboard
     ])
     ++ (with pkgs-unstable; [
       swww
