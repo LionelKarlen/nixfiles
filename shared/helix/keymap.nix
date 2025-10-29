@@ -17,6 +17,8 @@
       "Z" = {
         "Z" = ":q";
       };
+      "{" = "goto_prev_paragraph";
+      "}" = "goto_next_paragraph";
       "C-u" = [
         "page_cursor_half_up"
         "align_view_center"
