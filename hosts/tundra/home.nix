@@ -2,23 +2,9 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   imports = [
-    ./features/theme.nix
-    ./features/bash.nix
-    ./features/zsh.nix
-    ./features/yazi.nix
-    ./features/tmux.nix
-    ./features/git.nix
-    ./features/zellij.nix
-    ./features/lunarvim.nix
-    ./features/nu.nix
-    ./features/nixvim.nix
-    ./features/typst.nix
-    ## Optional packages, main way to install new things
-    ./features/packages.nix
-    ./features/systemlibs.nix
+    ./features.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -38,9 +24,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    hello
     neofetch
     nano
 
