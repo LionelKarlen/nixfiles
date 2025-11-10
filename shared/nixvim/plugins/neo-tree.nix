@@ -2,19 +2,21 @@
   programs.nixvim = {
     plugins.neo-tree = {
       enable = true;
-      window.position = "right";
-      filesystem = {
-        hijackNetrwBehavior = "disabled";
-        window = {
-          mappings = {
-            "<leader>e" = "close_window";
+      settings = {
+        window.position = "right";
+        filesystem = {
+          hijackNetrwBehavior = "disabled";
+          window = {
+            mappings = {
+              "<leader>e" = "close_window";
+            };
           };
-        };
-        filteredItems = {
-          hideDotfiles = false;
-          hideByName = [
-            ".git"
-          ];
+          filteredItems = {
+            hideDotfiles = false;
+            hideByName = [
+              ".git"
+            ];
+          };
         };
       };
     };
