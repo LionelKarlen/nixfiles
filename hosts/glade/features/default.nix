@@ -19,10 +19,11 @@
       cowsay
       libresplit
       aoc-cli
-      freecad
     ])
     ++ (with pkgs-unstable; [
       obs-studio
       bambu-studio
+      freecad
+      orca-slicer
     ]);
 }
