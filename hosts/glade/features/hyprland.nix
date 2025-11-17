@@ -32,8 +32,7 @@
     settings = {
       monitor = [
         "DP-2,2560x1440@165,0x0,1"
-        "DP-1,1920x1080,-1080x0,1,transform,3"
-        "HDMI-A-1,2560x1440,2560x0,1"
+        "DP-1,2560x1440,2560x0,1"
       ];
       input = {
         sensitivity = -0.75;
