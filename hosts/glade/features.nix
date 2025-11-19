@@ -66,7 +66,11 @@
     haskell.enable = true;
     rust.enable = true;
     cpp.enable = true;
-    deno.enable = true;
     nim.enable = true;
+    javascript = {
+      enable = true;
+      yarn = true;
+      deno = true;
+    };
   };
 }
