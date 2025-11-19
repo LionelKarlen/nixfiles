@@ -49,11 +49,6 @@
         layout = "dwindle";
         "col.active_border" = lib.mkForce ''rgb(${config.lib.stylix.colors.base0B})'';
       };
-      workspace = [
-        "1,monitor:DP-2"
-        "2,monitor:DP-2"
-        "3,monitor:DP-2"
-      ];
       decoration = {
         rounding = 0;
         blur.enabled = false;
@@ -85,7 +80,7 @@
         enable_hyprcursor = false;
       };
       gestures = {
-        workspace_swipe = "off";
+        workspace_swipe = "on";
       };
       misc = {
         force_default_wallpaper = 0;
@@ -155,7 +150,7 @@
       ];
       exec-once = [
         "hyprctl setcursor Bibita-Modern-Ice 24"
-        "bash ~/.nixfiles/hosts/glade/features/files/hyprland_startup.sh"
+        "bash ~/.nixfiles/hosts/taiga/features/files/hyprland_startup.sh"
       ];
     };
   };
