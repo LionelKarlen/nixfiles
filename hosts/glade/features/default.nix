@@ -19,6 +19,7 @@
       cowsay
       libresplit
       aoc-cli
+      obsidian
     ])
     ++ (with pkgs-unstable; [
       obs-studio
