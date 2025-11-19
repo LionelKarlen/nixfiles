@@ -2,35 +2,11 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   imports = [
-    ./features/bash.nix
-    ./features/gnome.nix
-    ./features/zsh.nix
-    ./features/tmux.nix
-    ./features/git.nix
-    #./features/zellij.nix
-    ./features/haskell.nix
-    ./features/jj.nix
-    ./features/nixvim.nix
-    ./features/firefox.nix
-    ./features/foot.nix
-    ./features/kitty.nix
-    ./features/taiga_theme.nix
-    ./features/hyprland.nix
+    ./features.nix
     ## Optional packages, main way to install new things
-    ./features/packages.nix
-    ./features/glade/ghostty.nix
-    ./features/unfree.nix
-    ./features/desktop_packages.nix
-    ./features/systemlibs.nix
   ];
-
-  programs.nh = {
-    enable = true;
-    flake = "/home/eepy/.taiga/";
-  };
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

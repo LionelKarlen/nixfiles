@@ -1,5 +1,6 @@
 #!/bin/sh
-swww init
+swww-daemon & 
 swww img ~/Pictures/wallpapers/nixos-wall.png
-nm-applet --indicator &
 waybar &
+nm-applet --indicator &
+

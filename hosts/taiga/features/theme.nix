@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   home.packages = with pkgs.nerd-fonts; [
     hasklug
@@ -8,7 +13,13 @@
 
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-light.yaml";
+
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 24;
+    };
 
     fonts = {
       serif = {
@@ -31,6 +42,9 @@
       # disabling nixvim stops the nixvim internal theming from working too, so just ignore it
       # nixvim.enable = false;
       # neovim.enable = false;
+      helix.enable = false;
+      yazi.enable = false;
+      firefox.enable = false;
     };
   };
 }

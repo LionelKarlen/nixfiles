@@ -8,8 +8,7 @@
 }:
 {
   imports = [
-    # Include the results of the hardware scan.
-    ./taiga-hardware-configuration.nix
+    ./hardware-configuration.nix
     ./features/kanata.nix
   ];
 
@@ -50,15 +49,15 @@
     LC_TIME = "de_CH.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  #services.xserver.enable = true;
-
   # Enable the GNOME Desktop Environment.
-  #services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.wayland = true;
 
   programs.dconf.enable = true;
   programs.hyprland = {
+    enable = true;
     xwayland.enable = true;
   };
 
@@ -105,6 +104,7 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+  programs.zsh.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.eepy = {
@@ -115,9 +115,7 @@
       "wheel"
       "uinput"
     ];
-    packages = with pkgs; [
-      #  thunderbird
-    ];
+    shell = pkgs.zsh;
   };
 
   # Install firefox.
@@ -130,7 +128,6 @@
     #  wget
     neovim
     git
-    polkit-kde-agent
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -141,13 +138,13 @@
   #   enableSSHSupport = true;
   # };
 
-  virtualisation.docker = {
-    enable = true;
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
-  };
+  # virtualisation.docker = {
+  #   enable = true;
+  #   rootless = {
+  #     enable = true;
+  #     setSocketVariable = true;
+  #   };
+  # };
 
   # List services that you want to enable:
 

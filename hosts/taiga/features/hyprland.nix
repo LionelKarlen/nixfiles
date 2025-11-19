@@ -1,21 +1,27 @@
 {
-  config,
   pkgs,
+  pkgs-unstable,
+  lib,
+  config,
   ...
 }:
 {
   imports = [
-    ./rofi.nix
     ./waybar.nix
   ];
 
-  home.packages = [
-    pkgs.xwayland
-    pkgs.swww
-    pkgs.networkmanagerapplet
-    pkgs.kdePackages.breeze
-    pkgs.pavucontrol
-  ];
+  home.packages =
+    (with pkgs; [
+      xwayland
+      networkmanagerapplet
+      kdePackages.breeze
+      pavucontrol
+      hyprshot
+      wl-clipboard
+    ])
+    ++ (with pkgs-unstable; [
+      swww
+    ]);
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -28,6 +34,7 @@
         ",2256x1504,auto,1"
       ];
       input = {
+        sensitivity = 0;
         kb_layout = "ch";
         kb_variant = "de";
         follow_mouse = 1;
@@ -37,25 +44,34 @@
       };
       general = {
         border_size = 2;
-        gaps_in = 3;
-        gaps_out = 2;
+        gaps_in = 5;
+        gaps_out = 10;
         layout = "dwindle";
-        # "col.active_border" = "0xff24acd4";
+        "col.active_border" = lib.mkForce ''rgb(${config.lib.stylix.colors.base0B})'';
       };
+      workspace = [
+        "1,monitor:DP-2"
+        "2,monitor:DP-2"
+        "3,monitor:DP-2"
+      ];
       decoration = {
         rounding = 0;
         blur.enabled = false;
       };
       animations = {
         enabled = "yes";
-        bezier = "in_bezier, 0.05, 0.9, 0.1, 1.05";
+        bezier = [
+          "in_bezier, 0.05, 0.9, 0.1, 1.05"
+          "inout_bezier, 0.65, 0, 0.35, 1"
+        ];
         animation = [
           "windows, 1, 2, in_bezier"
           "windowsOut, 1, 2, default, popin 80%"
           "border, 1, 2, default"
           "borderangle, 1, 2, default"
           "fade, 1, 2, default"
-          "workspaces, 1, 2, default"
+          "workspaces, 1, 2, inout_bezier"
+          "specialWorkspace,1,2,default,slidefadevert -50%"
         ];
       };
       dwindle = {
@@ -63,6 +79,10 @@
         preserve_split = "yes";
       };
       master = {
+      };
+      cursor = {
+        no_hardware_cursors = true;
+        enable_hyprcursor = false;
       };
       gestures = {
         workspace_swipe = "off";
@@ -73,11 +93,14 @@
       "$mainMod" = "SUPER";
       bind = [
         # execution
-        "$mainMod, RETURN, exec, foot"
-        "$mainMod, B, exec, librewolf"
-        "$mainMod SHIFT, B, exec, librewolf --private-window"
+        "$mainMod, RETURN, exec, ghostty"
+        "$mainMod SHIFT, COMMA, exec, ghostty"
+        "$mainMod SHIFT, B, exec, zen --private-window"
+        "$mainMod, B, exec, zen"
         "$mainMod, E, exec, dolphin"
         "$mainMod, SPACE, exec, rofi -show drun"
+        "$mainMod, R, exec, rofi -show drun"
+        "$mainMod, Z, exec, hyprshot -m region --clipboard-only"
 
         # hotkeys
         "$mainMod SHIFT, E, exit" # close hyprland
@@ -107,8 +130,6 @@
         "$mainMod, 7, workspace, 7"
         "$mainMod, 8, workspace, 8"
         "$mainMod, 9, workspace, 9"
-        "$mainMod, O, workspace, O"
-        "$mainMod, Y, workspace, Y"
 
         "$mainMod SHIFT, 1, movetoworkspace, 1"
         "$mainMod SHIFT, 2, movetoworkspace, 2"
@@ -119,16 +140,22 @@
         "$mainMod SHIFT, 7, movetoworkspace, 7"
         "$mainMod SHIFT, 8, movetoworkspace, 8"
         "$mainMod SHIFT, 9, movetoworkspace, 9"
-        "$mainMod SHIFT, O, movetoworkspace, O"
-        "$mainMod SHIFT, Y, movetoworkspace, Y"
+
+        "$mainMod, O, togglespecialworkspace, O"
+        "$mainMod, D, togglespecialworkspace, D"
+        "$mainMod, Y, togglespecialworkspace, Y"
+
+        "$mainMod SHIFT, O, movetoworkspace, special:O"
+        "$mainMod SHIFT, D, movetoworkspace, special:D"
+        "$mainMod SHIFT, Y, movetoworkspace, special:Y"
 
         # scratchpad
         "$mainMod, S, togglespecialworkspace, magic"
         "$mainMod SHIFT, S, movetoworkspace, special:magic"
       ];
       exec-once = [
-        "hyprctl setcursor Breeze_Light 24"
-        "bash ~/.taiga/features/hyprland_autostart.sh"
+        "hyprctl setcursor Bibita-Modern-Ice 24"
+        "bash ~/.nixfiles/hosts/glade/features/files/hyprland_startup.sh"
       ];
     };
   };
