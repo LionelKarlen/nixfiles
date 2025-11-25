@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  programs.helix.extraPackages = with pkgs; [
+  home.packages = with pkgs; [
     nixd
     marksman
     harper
