@@ -23,8 +23,22 @@
     ])
     ++ (with pkgs-unstable; [
       obs-studio
-      bambu-studio
-      freecad
+      (symlinkJoin {
+        name = "bambu-studio";
+        paths = [ bambu-studio ];
+        buildInputs = [ makeWrapper ];
+        postBuild = ''
+          wrapProgram $out/bin/bambu-studio --set WAYLAND_DISPLAY 1 --set XDG_SESSION_TYPE x11 --set GBM_BACKEND dri
+        '';
+      })
+      (symlinkJoin {
+        name = "freecad";
+        paths = [ freecad ];
+        buildInputs = [ makeWrapper ];
+        postBuild = ''
+          wrapProgram $out/bin/freecad --set QT_QPA_PLATFORM xcb
+        '';
+      })
       orca-slicer
     ]);
 }
