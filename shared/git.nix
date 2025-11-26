@@ -14,6 +14,7 @@
       git-credential-manager
       pass
       pinentry-tty
+      delta
     ];
 
     programs.gpg = {
@@ -37,6 +38,8 @@
       userEmail = "lionel.karlen@protonmail.com";
       extraConfig = {
         init.defaultBranch = "main";
+        core.pager = "delta";
+        interactive.diffFilter = "delta --color-only";
         url = {
           "https://github.com/" = {
             insteadOf = [
@@ -67,7 +70,8 @@
         gl = "git log --oneline";
         gc = "git commit";
         gaa = "git add -A";
-        gs = "git status";
+        gs = "git status -s";
+        gd = "git diff HEAD";
       };
     };
   };
