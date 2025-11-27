@@ -157,6 +157,8 @@
       exec-once = [
         "hyprctl setcursor Bibita-Modern-Ice 24"
         "bash ~/.nixfiles/hosts/glade/features/files/hyprland_startup.sh"
+        "xrandr --output DP-2 --primary"
+        "hyprctl dispatch workspace 1"
       ];
     };
   };
