@@ -1,9 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 {
 
   nixpkgs.overlays = [
     (final: prev: {
-      livesplit-one-druid = prev.callPackage ./../../../packages/livesplit-one/livesplit-one.nix { };
+      livesplit-one-druid =
+        pkgs-unstable.callPackage ./../../../packages/livesplit-one/livesplit-one.nix
+          { };
     })
   ];
 
