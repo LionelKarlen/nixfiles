@@ -2,7 +2,7 @@
 {
   programs.nixvim = {
     opts.termguicolors = true;
-    plugins.lualine.enable = true;
+    plugins.lualine.enable = false;
     plugins.web-devicons.enable = true;
     plugins.bufferline = {
       enable = false;
