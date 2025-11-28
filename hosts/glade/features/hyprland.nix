@@ -85,9 +85,6 @@
         no_hardware_cursors = true;
         enable_hyprcursor = false;
       };
-      gestures = {
-        workspace_swipe = "off";
-      };
       misc = {
         force_default_wallpaper = 0;
       };
