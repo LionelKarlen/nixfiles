@@ -11,6 +11,7 @@
     ./discord.nix
     ./spotify.nix
     ./calibre.nix
+    ./filezilla.nix
   ];
   options.applications = {
     discord.enable = lib.mkEnableOption "enable discord (vencord)";
@@ -18,5 +19,6 @@
     kanri.enable = lib.mkEnableOption "enable kanri";
     spotify.enable = lib.mkEnableOption "enable spotify (spicetify)";
     calibre.enable = lib.mkEnableOption "enable calibre";
+    filezilla.enable = lib.mkEnableOption "enable filezilla";
   };
 }

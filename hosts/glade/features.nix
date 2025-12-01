@@ -31,6 +31,7 @@
     kanri.enable = true;
     freetube.enable = true;
     calibre.enable = true;
+    filezilla.enable = true;
 
     terminals = {
       ghostty.enable = true;
