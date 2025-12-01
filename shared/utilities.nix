@@ -19,6 +19,7 @@
         zip
         fzf
         fd
+        htop
       ])
       ++ (with pkgs-unstable; [
         just
