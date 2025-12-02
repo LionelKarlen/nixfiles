@@ -15,5 +15,6 @@
     javascript.enable = lib.mkEnableOption "enable javascript";
     javascript.yarn = lib.mkEnableOption "enable yarn";
     javascript.deno = lib.mkEnableOption "enable deno";
+    javascript.bun = lib.mkEnableOption "enable bun";
   };
 }

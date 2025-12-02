@@ -25,5 +25,11 @@ lib.mkIf config.programming.javascript.enable (
         deno
       ];
     })
+
+    (lib.mkIf config.programming.javascript.bun {
+      home.packages = with pkgs; [
+        bun
+      ];
+    })
   ]
 )

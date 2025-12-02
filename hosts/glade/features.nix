@@ -72,6 +72,7 @@
       enable = true;
       yarn = true;
       deno = true;
+      bun = true;
     };
   };
 }
