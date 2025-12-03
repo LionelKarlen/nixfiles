@@ -54,7 +54,8 @@
       firefox.enable = true;
       tor.enable = true;
       zen.enable = true;
-      brave.enable = true;
+      brave.enable = false;
+      librewolf.enable = true;
     };
 
     proton = {
