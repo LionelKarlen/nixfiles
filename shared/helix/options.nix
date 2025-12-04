@@ -1,6 +1,6 @@
 { ... }:
 {
   programs.helix.settings = {
-    theme = "everforest_light";
+    theme = "ayu_light";
   };
 }

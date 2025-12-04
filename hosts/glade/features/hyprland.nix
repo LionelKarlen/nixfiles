@@ -48,7 +48,7 @@
         gaps_in = 5;
         gaps_out = 10;
         layout = "dwindle";
-        "col.active_border" = lib.mkForce ''rgb(${config.lib.stylix.colors.base0B})'';
+        "col.active_border" = lib.mkForce ''rgb(424153)'';
       };
       workspace = [
         "1,monitor:DP-2"
@@ -58,6 +58,7 @@
       decoration = {
         rounding = 0;
         blur.enabled = false;
+        shadow.enabled = false;
       };
       animations = {
         enabled = "yes";

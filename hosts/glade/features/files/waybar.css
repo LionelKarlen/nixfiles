@@ -30,6 +30,7 @@ window#waybar {
 
 #workspaces button.active label {
     font-weight: bolder;
-    color: @base0B;
+    /* color: @base0B; */
+    color: #abbcda;
     transition: all 100ms ease-out;
 }

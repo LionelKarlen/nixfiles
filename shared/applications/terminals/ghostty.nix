@@ -8,7 +8,7 @@ lib.mkIf config.applications.terminals.ghostty.enable {
     enable = true;
     clearDefaultKeybinds = true;
     settings = {
-      font-family = "Hasklug Nerd Font";
+      font-family = "BlexMono Nerd Font";
       font-size = 13;
       window-padding-x = 0;
       window-padding-y = 0;
