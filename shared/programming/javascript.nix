@@ -8,7 +8,7 @@ lib.mkIf config.programming.javascript.enable (
   lib.mkMerge [
     {
       home.packages = with pkgs; [
-        nodejs
+        nodejs_latest
         typescript-language-server
         typescript
       ];
@@ -16,7 +16,7 @@ lib.mkIf config.programming.javascript.enable (
 
     (lib.mkIf config.programming.javascript.yarn {
       home.packages = with pkgs; [
-        yarn
+        yarn-berry_4
       ];
     })
 
