@@ -46,6 +46,13 @@
     LC_TIME = "de_CH.UTF-8";
   };
 
+  services.udev = {
+    packages = with pkgs; [
+      qmk-udev-rules
+      vial
+    ];
+  };
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.wayland = true;

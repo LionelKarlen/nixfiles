@@ -19,6 +19,7 @@
       cowsay
       libresplit
       aoc-cli
+      vial
       obsidian
     ])
     ++ (with pkgs-unstable; [
