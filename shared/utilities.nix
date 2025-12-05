@@ -20,6 +20,7 @@
         fzf
         fd
         htop
+        mprocs
       ])
       ++ (with pkgs-unstable; [
         just
