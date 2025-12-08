@@ -12,7 +12,9 @@
       };
       "space" = {
         "o" = "file_picker";
+        "f" = "file_picker_in_current_buffer_directory";
         "l" = "buffer_picker";
+        ";" = ":reload-all";
         "q" = {
           "b" = ":buffer-close";
           "B" = ":buffer-close!";
