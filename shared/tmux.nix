@@ -45,12 +45,16 @@ in
         bind r source-file ~/.config/tmux/tmux.conf
         bind q killp
 
-        # vim mode copy
-        set-window-option -g mode-keys vi
-        bind -T copy-mode-vi 'v' send -X begin-selection
-        # TODO: Update this with proper copy command
-        # bind -T copy-mode-vi 'y' send -X copy-pipe-and-cancel ""
-        unbind -T copy-mode-vi MouseDragEnd1Pane
+        set -g mouse on
+        bind-key -T root WheelUpPane send-keys ""   # or ^Y
+        bind-key -T root WheelDownPane send-keys "" # or ^E
+
+        # # vim mode copy
+        # set-window-option -g mode-keys vi
+        # bind -T copy-mode-vi 'v' send -X begin-selection
+        # # TODO: Update this with proper copy command
+        # # bind -T copy-mode-vi 'y' send -X copy-pipe-and-cancel ""
+        # unbind -T copy-mode-vi MouseDragEnd1Pane
 
         # navigation
         bind -n M-1 selectw -t 1
