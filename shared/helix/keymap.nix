@@ -13,6 +13,12 @@
       "space" = {
         "o" = "file_picker";
         "l" = "buffer_picker";
+        "q" = {
+          "b" = ":buffer-close";
+          "B" = ":buffer-close!";
+          "o" = ":buffer-close-others";
+          "z" = ":q!";
+        };
       };
       "Z" = {
         "Z" = ":q";
