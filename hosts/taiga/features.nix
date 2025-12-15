@@ -14,6 +14,7 @@
       "discord"
       "vesktop"
       "discord-canary"
+      "obsidian"
     ];
 
   zoxide.enable = true;
