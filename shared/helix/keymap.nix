@@ -26,6 +26,10 @@
           "z" = ":q!";
           "q" = ":q!";
         };
+        "m" = [
+          "toggle_comments"
+          "toggle_comments"
+        ];
       };
       "Z" = {
         "Z" = ":q";

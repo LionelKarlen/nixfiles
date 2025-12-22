@@ -8,6 +8,7 @@
       enable = true;
       shellAliases = {
         hms = "home-manager switch --flake /home/$(whoami)/.$(hostname)/";
+        org = "$EDITOR ~/org/tasks.todo.txt";
         e = "$EDITOR";
         c = ''$EDITOR -c ":Yazi"'';
       };
