@@ -137,10 +137,12 @@
         "$mainMod SHIFT, 9, movetoworkspace, 9"
 
         "$mainMod, O, togglespecialworkspace, O"
+        "$mainMod, I, togglespecialworkspace, I"
         "$mainMod, D, togglespecialworkspace, D"
         "$mainMod, Y, togglespecialworkspace, Y"
 
         "$mainMod SHIFT, O, movetoworkspace, special:O"
+        "$mainMod SHIFT, I, movetoworkspace, special:I"
         "$mainMod SHIFT, D, movetoworkspace, special:D"
         "$mainMod SHIFT, Y, movetoworkspace, special:Y"
 
