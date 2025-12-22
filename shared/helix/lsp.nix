@@ -48,6 +48,11 @@
           "harper-ls"
         ];
       }
+      {
+        name = "todotxt";
+        auto-format = false;
+        comment-tokens = "x";
+      }
     ];
 
     language-server = {
