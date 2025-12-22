@@ -3,6 +3,7 @@
   imports = [
     ./vikunja.nix
     ./caddy.nix
+    ./syncthing.nix
   ];
 
   options.shared_services = {
@@ -22,6 +23,14 @@
     };
     caddy = {
       enable = lib.mkEnableOption "enable Caddy";
+    };
+    syncthing = {
+      enable = lib.mkEnableOption "enable Syncthing";
+      username = lib.mkOption {
+        type = lib.types.str;
+        default = "lionel";
+        description = "Syncthing username (primary user)";
+      };
     };
   };
 }
