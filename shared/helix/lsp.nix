@@ -51,7 +51,16 @@
       {
         name = "todotxt";
         auto-format = false;
-        comment-tokens = "x";
+        block-comment-tokens = [
+          {
+            start = "x";
+            end = "";
+          }
+          {
+            start = ".";
+            end = "";
+          }
+        ];
       }
     ];
 
