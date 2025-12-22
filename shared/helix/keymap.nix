@@ -19,7 +19,12 @@
           "b" = ":buffer-close";
           "B" = ":buffer-close!";
           "o" = ":buffer-close-others";
+          "a" = [
+            ":buffer-close-all"
+            "file_picker"
+          ];
           "z" = ":q!";
+          "q" = ":q!";
         };
       };
       "Z" = {
