@@ -12,6 +12,12 @@
     ./notifications.nix
   ];
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      cria = prev.callPackage ../../../packages/cria/cria.nix { };
+    })
+  ];
+
   home.packages =
     (with pkgs; [
       scarab
@@ -21,6 +27,7 @@
       aoc-cli
       vial
       obsidian
+      cria
     ])
     ++ (with pkgs-unstable; [
       obs-studio

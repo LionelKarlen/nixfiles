@@ -50,7 +50,14 @@
       }
       {
         name = "todotxt";
-        auto-format = false;
+        auto-format = true;
+        formatter = {
+          command = "cria";
+          args = [
+            "format"
+            "--stdio"
+          ];
+        };
         block-comment-tokens = [
           {
             start = "x";
