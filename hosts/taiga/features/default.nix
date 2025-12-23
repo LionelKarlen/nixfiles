@@ -13,6 +13,7 @@
 
   home.packages =
     (with pkgs; [
+      audacity
     ])
     ++ (with pkgs-unstable; [
     ]);
