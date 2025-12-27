@@ -9,6 +9,7 @@
       shellAliases = {
         hms = "home-manager switch --flake /home/$(whoami)/.$(hostname)/";
         org = "$EDITOR ~/org/tasks.todo.txt";
+        vault = "$EDITOR ~/vault";
         e = "$EDITOR";
         c = ''$EDITOR -c ":Yazi"'';
       };

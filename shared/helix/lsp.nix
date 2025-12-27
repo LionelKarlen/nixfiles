@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [
     nixd
-    marksman
+    markdown-oxide
     harper
     emmet-language-server
   ];
@@ -23,7 +23,7 @@
       {
         name = "markdown";
         language-servers = [
-          "marksman"
+          "markdown-oxide"
           "harper-ls"
         ];
       }
