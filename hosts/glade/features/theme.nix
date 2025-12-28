@@ -45,6 +45,7 @@
       helix.enable = false;
       yazi.enable = false;
       firefox.enable = false;
+      zen-browser.enable = false;
     };
   };
 }

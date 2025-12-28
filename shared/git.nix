@@ -34,9 +34,11 @@
 
     programs.git = {
       enable = true;
-      userName = "Lionel Karlen";
-      userEmail = "lionel.karlen@protonmail.com";
-      extraConfig = {
+      settings = {
+        user = {
+          name = "Lionel Karlen";
+          email = "lionel.karlen@protonmail.com";
+        };
         init.defaultBranch = "main";
         core.pager = "delta";
         interactive.diffFilter = "delta --color-only";
