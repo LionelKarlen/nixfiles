@@ -15,6 +15,7 @@
   nixpkgs.overlays = [
     (final: prev: {
       cria = prev.callPackage ../../../packages/cria/cria.nix { };
+      vintagestory = prev.callPackage ../../../packages/vintagestory/vintagestory.nix { };
     })
   ];
 
@@ -28,6 +29,7 @@
       vial
       obsidian
       cria
+      vintagestory
     ])
     ++ (with pkgs-unstable; [
       obs-studio
