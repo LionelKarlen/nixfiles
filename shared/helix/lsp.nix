@@ -5,6 +5,7 @@
     markdown-oxide
     harper
     emmet-language-server
+    biome
   ];
   programs.helix.settings.editor.lsp = {
     display-inlay-hints = true;
@@ -31,13 +32,31 @@
         name = "tsx";
         auto-format = true;
         language-servers = [
-          "typescript-language-server"
+          {
+            name = "typescript-language-server";
+            except-features = [ "format" ];
+          }
+          "biome"
           "emmet-lsp"
         ];
       }
       {
         name = "typescript";
         auto-format = true;
+        language-servers = [
+          {
+            name = "typescript-language-server";
+            except-features = [ "format" ];
+          }
+          "biome"
+        ];
+      }
+      {
+        name = "json";
+        auto-format = false;
+        language-servers = [
+          "biome"
+        ];
       }
       {
         name = "typst";
@@ -72,6 +91,10 @@
     ];
 
     language-server = {
+      biome = {
+        command = "biome";
+        args = [ "lsp-proxy" ];
+      };
       nixd = {
         command = "nixd";
       };
