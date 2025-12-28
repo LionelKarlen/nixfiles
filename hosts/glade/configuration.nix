@@ -56,7 +56,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.wayland = true;
+  services.displayManager.gdm.wayland = true;
 
   nixpkgs.config.allowUnfreePredicate =
     pkg:
@@ -68,8 +68,8 @@
   # services.xserver.videoDrivers = [ "nvidia" ];
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   programs.dconf.enable = true;
   programs.hyprland = {
@@ -102,12 +102,18 @@
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
+    GTK_IM_MODULE = "simple";
   };
 
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "ch";
     variant = "de_nodeadkeys";
+  };
+
+  i18n.inputMethod = {
+    enable = lib.mkForce false;
+    type = "ibus";
   };
 
   # Configure console keymap
