@@ -12,6 +12,7 @@
     ./spotify.nix
     ./calibre.nix
     ./filezilla.nix
+    ./obsidian.nix
   ];
   options.applications = {
     discord.enable = lib.mkEnableOption "enable discord (vencord)";
@@ -20,5 +21,6 @@
     spotify.enable = lib.mkEnableOption "enable spotify (spicetify)";
     calibre.enable = lib.mkEnableOption "enable calibre";
     filezilla.enable = lib.mkEnableOption "enable filezilla";
+    obsidian.enable = lib.mkEnableOption "enable obsidian";
   };
 }

@@ -33,6 +33,7 @@
     freetube.enable = true;
     calibre.enable = true;
     filezilla.enable = true;
+    obsidian.enable = true;
 
     terminals = {
       ghostty.enable = true;

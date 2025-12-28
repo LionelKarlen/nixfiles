@@ -27,7 +27,6 @@
       libresplit
       aoc-cli
       vial
-      obsidian
       cria
       vintagestory
     ])
