@@ -69,7 +69,8 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
     makeWrapper ${lib.getExe electron} $out/bin/freetube \
       --add-flags "$out/share/freetube/resources/app.asar" \
-      --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --enable-wayland-ime=true}}"
+      --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --enable-wayland-ime=true}}" \
+      --add-flags "--disable-gpu"
 
     install -D _icons/icon.svg $out/share/icons/hicolor/scalable/apps/freetube.svg
   ''

@@ -3,6 +3,10 @@
   programs.helix.settings.keys = {
     normal = {
       ";" = ":w";
+      "D" = [
+        "extend_to_line_end"
+        "delete_selection"
+      ];
       "," = [
         "collapse_selection"
         "keep_primary_selection"
