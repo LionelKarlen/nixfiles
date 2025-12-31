@@ -6,6 +6,7 @@
     ./rust.nix
     ./cpp.nix
     ./javascript.nix
+    ./go.nix
   ];
   options.programming = {
     haskell.enable = lib.mkEnableOption "enable haskell";
@@ -16,5 +17,6 @@
     javascript.yarn = lib.mkEnableOption "enable yarn";
     javascript.deno = lib.mkEnableOption "enable deno";
     javascript.bun = lib.mkEnableOption "enable bun";
+    go.enable = lib.mkEnableOption "enable go";
   };
 }

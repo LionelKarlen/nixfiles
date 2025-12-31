@@ -70,6 +70,7 @@
     haskell.enable = true;
     rust.enable = true;
     cpp.enable = true;
+    go.enable = true;
     nim.enable = true;
     javascript = {
       enable = true;
