@@ -29,6 +29,7 @@
       vial
       cria
       vintagestory
+      anki
     ])
     ++ (with pkgs-unstable; [
       obs-studio
