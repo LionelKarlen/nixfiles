@@ -30,6 +30,8 @@
       cria
       vintagestory
       anki
+      vscodium
+      elan
     ])
     ++ (with pkgs-unstable; [
       obs-studio
