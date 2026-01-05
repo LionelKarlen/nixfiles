@@ -6,5 +6,6 @@
 
   shared_services = {
     syncthing.enable = true;
+    tailscale.enable = true;
   };
 }

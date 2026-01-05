@@ -4,6 +4,7 @@
     ./vikunja.nix
     ./caddy.nix
     ./syncthing.nix
+    ./tailscale.nix
   ];
 
   options.shared_services = {
@@ -23,6 +24,9 @@
     };
     caddy = {
       enable = lib.mkEnableOption "enable Caddy";
+    };
+    tailscale = {
+      enable = lib.mkEnableOption "enable Tailscale";
     };
     syncthing = {
       enable = lib.mkEnableOption "enable Syncthing";
