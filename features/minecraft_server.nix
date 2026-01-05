@@ -70,6 +70,10 @@
                 url = "https://cdn.modrinth.com/data/wW2N9HyO/versions/My95V28y/fake_afk-1.0.6-1.21.6.jar";
                 hash = "sha256-nVAm08vdM2PBHUslsYaCZ9EW9a2cAmaQ33uRdXIlaNk=";
               };
+              easy_item_sorter = pkgs.fetchurl {
+                url = "https://cdn.modrinth.com/data/cfW1jJT7/versions/MwIzIBIA/easy-multi-item-sorter-1.0.2.jar";
+                hash = "sha256-+Ftf4STQKMNAuPpzQOmS4C6IDC4Wy71gvdE9C3/3lwM=";
+              };
             }
           );
         };
