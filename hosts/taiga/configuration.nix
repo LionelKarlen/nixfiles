@@ -9,6 +9,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./services/default.nix
   ];
 
   # Bootloader.

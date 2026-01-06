@@ -8,7 +8,7 @@
 
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
+    package = pkgs.rofi;
     theme =
       with config.lib.stylix.colors.withHashtag;
       builtins.toFile "theme.rasi" (
