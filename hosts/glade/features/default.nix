@@ -14,7 +14,6 @@
 
   nixpkgs.overlays = [
     (final: prev: {
-      cria = prev.callPackage ../../../packages/cria/cria.nix { };
       vintagestory = prev.callPackage ../../../packages/vintagestory/vintagestory.nix { };
     })
   ];
@@ -27,7 +26,6 @@
       libresplit
       aoc-cli
       vial
-      cria
       vintagestory
       anki
       vscodium

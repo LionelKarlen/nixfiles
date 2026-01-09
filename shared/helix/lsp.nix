@@ -1,11 +1,17 @@
 { pkgs, ... }:
 {
+  nixpkgs.overlays = [
+    (final: prev: {
+      cria = prev.callPackage ../../packages/cria/cria.nix { };
+    })
+  ];
   home.packages = with pkgs; [
     nixd
     markdown-oxide
     harper
     emmet-language-server
     biome
+    cria
   ];
   programs.helix.settings.editor.lsp = {
     display-inlay-hints = true;
