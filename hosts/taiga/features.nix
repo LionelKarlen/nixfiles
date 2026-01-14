@@ -70,6 +70,7 @@
     javascript = {
       enable = true;
       yarn = true;
+      bun = true;
     };
   };
 }
