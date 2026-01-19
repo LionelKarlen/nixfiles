@@ -19,6 +19,7 @@
         "f" = "file_picker_in_current_buffer_directory";
         "l" = "buffer_picker";
         ";" = ":reload-all";
+        "A" = ":lsp-workspace-command";
         "q" = {
           "b" = ":buffer-close";
           "B" = ":buffer-close!";
