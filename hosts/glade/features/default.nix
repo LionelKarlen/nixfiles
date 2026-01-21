@@ -30,6 +30,7 @@
       anki
       vscodium
       elan
+      jellyfin-media-player
     ])
     ++ (with pkgs-unstable; [
       obs-studio
