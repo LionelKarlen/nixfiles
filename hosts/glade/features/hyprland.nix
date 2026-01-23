@@ -47,6 +47,7 @@
         border_size = 2;
         gaps_in = 5;
         gaps_out = 10;
+        allow_tearing = true;
         layout = "dwindle";
         "col.active_border" = lib.mkForce ''rgb(424153)'';
       };
