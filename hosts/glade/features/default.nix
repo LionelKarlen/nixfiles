@@ -31,6 +31,7 @@
       vscodium
       elan
       jellyfin-media-player
+      beeref
     ])
     ++ (with pkgs-unstable; [
       obs-studio
