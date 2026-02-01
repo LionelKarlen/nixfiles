@@ -32,6 +32,7 @@
       elan
       jellyfin-media-player
       beeref
+      libreoffice
     ])
     ++ (with pkgs-unstable; [
       obs-studio
