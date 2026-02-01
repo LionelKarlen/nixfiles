@@ -72,6 +72,7 @@
     cpp.enable = true;
     go.enable = true;
     nim.enable = true;
+    zig.enable = true;
     javascript = {
       enable = true;
       yarn = true;

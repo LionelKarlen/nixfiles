@@ -7,6 +7,7 @@
     ./cpp.nix
     ./javascript.nix
     ./go.nix
+    ./zig.nix
   ];
   options.programming = {
     haskell.enable = lib.mkEnableOption "enable haskell";
@@ -18,5 +19,6 @@
     javascript.deno = lib.mkEnableOption "enable deno";
     javascript.bun = lib.mkEnableOption "enable bun";
     go.enable = lib.mkEnableOption "enable go";
+    zig.enable = lib.mkEnableOption "enable zig";
   };
 }
