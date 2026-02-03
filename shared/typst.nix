@@ -6,12 +6,12 @@
   ...
 }:
 let
-  elk-utils_version = "1.1.0";
+  elk-utils_version = "2.0.1";
   elk-utils = pkgs.fetchFromGitHub {
     owner = "lionelkarlen";
     repo = "elk-utils";
-    rev = "054acdddbfb04b36d3d1ebb6d914a7d637f64cb6";
-    hash = "sha256-u4dm1MmXS4WWD8kq2b5dbJWT1ztB9qdDEPZHqIRJ0Zg";
+    tag = "v${elk-utils_version}";
+    hash = "sha256-imnEvfLoKpWGRd1HufZ+oaKU7lOTJOnClyYiMhZDbR0=";
   };
 in
 {
