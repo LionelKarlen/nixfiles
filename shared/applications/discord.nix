@@ -6,6 +6,6 @@
 }:
 lib.mkIf config.applications.discord.enable {
   home.packages = [
-    pkgs.vesktop
+    pkgs.discord-canary
   ];
 }
