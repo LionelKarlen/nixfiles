@@ -109,6 +109,7 @@
         args = [ "--stdio" ];
         config = {
           harper-ls = {
+            dialect = "British";
             linters = {
               long_sentences = false;
             };
