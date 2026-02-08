@@ -7,5 +7,6 @@
 lib.mkIf config.programming.cpp.enable {
   home.packages = with pkgs; [
     gcc
+    clang-tools
   ];
 }
