@@ -58,6 +58,7 @@
       zen.enable = true;
       brave.enable = false;
       librewolf.enable = true;
+      chromium.enable = true;
     };
 
     proton = {

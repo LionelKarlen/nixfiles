@@ -6,6 +6,7 @@
     ./tor.nix
     ./zen.nix
     ./librewolf.nix
+    ./chromium.nix
   ];
 
   options.applications.browsers = {
@@ -14,5 +15,6 @@
     tor.enable = lib.mkEnableOption "enable tor";
     zen.enable = lib.mkEnableOption "enable zen";
     librewolf.enable = lib.mkEnableOption "enable librewolf";
+    chromium.enable = lib.mkEnableOption "enable chromium";
   };
 }
