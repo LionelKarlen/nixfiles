@@ -7,6 +7,7 @@
     ./cpp.nix
     ./javascript.nix
     ./go.nix
+    ./dart.nix
     ./zig.nix
   ];
   options.programming = {
@@ -19,6 +20,7 @@
     javascript.deno = lib.mkEnableOption "enable deno";
     javascript.bun = lib.mkEnableOption "enable bun";
     go.enable = lib.mkEnableOption "enable go";
+    dart.enable = lib.mkEnableOption "enable dart";
     zig.enable = lib.mkEnableOption "enable zig";
   };
 }

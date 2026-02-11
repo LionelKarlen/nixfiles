@@ -72,6 +72,7 @@
     rust.enable = true;
     cpp.enable = true;
     go.enable = true;
+    dart.enable = true;
     nim.enable = true;
     zig.enable = true;
     javascript = {
