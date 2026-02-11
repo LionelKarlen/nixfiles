@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs-unstable,
   ...
 }:
 {
@@ -25,6 +26,7 @@
     programs.helix = {
       enable = true;
       defaultEditor = config.helix.defaultEditor;
+      package = pkgs-unstable.helix;
     };
   };
 }
