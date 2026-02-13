@@ -3,6 +3,8 @@
   programs.helix.settings.keys = {
     normal = {
       ";" = ":w";
+      "x" = "extend_to_line_bounds";
+      "X" = "extend_line_below";
       "D" = [
         "extend_to_line_end"
         "delete_selection"
