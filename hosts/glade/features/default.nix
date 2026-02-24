@@ -33,6 +33,7 @@
       jellyfin-media-player
       beeref
       libreoffice
+      rnote
     ])
     ++ (with pkgs-unstable; [
       obs-studio
