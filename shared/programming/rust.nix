@@ -8,6 +8,7 @@ lib.mkIf config.programming.rust.enable {
   home.packages = with pkgs; [
     rustup
     bacon
+    cargo-tarpaulin
   ];
 
   programs.nixvim.plugins.lsp.servers.rust_analyzer = {
