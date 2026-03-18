@@ -9,6 +9,7 @@ lib.mkIf config.programming.javascript.enable (
     {
       home.packages = with pkgs; [
         nodejs_latest
+        pnpm
         typescript-language-server
         typescript
       ];
