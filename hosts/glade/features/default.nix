@@ -15,6 +15,7 @@
   nixpkgs.overlays = [
     (final: prev: {
       vintagestory = prev.callPackage ../../../packages/vintagestory/vintagestory.nix { };
+      microcad = prev.callPackage ../../../packages/microcad/microcad.nix { };
     })
   ];
 
@@ -34,6 +35,7 @@
       beeref
       libreoffice
       rnote
+      microcad
     ])
     ++ (with pkgs-unstable; [
       obs-studio
