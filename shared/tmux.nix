@@ -49,12 +49,13 @@ in
         bind-key -T root WheelUpPane send-keys ""   # or ^Y
         bind-key -T root WheelDownPane send-keys "" # or ^E
 
-        # # vim mode copy
-        # set-window-option -g mode-keys vi
-        # bind -T copy-mode-vi 'v' send -X begin-selection
-        # # TODO: Update this with proper copy command
-        # # bind -T copy-mode-vi 'y' send -X copy-pipe-and-cancel ""
-        # unbind -T copy-mode-vi MouseDragEnd1Pane
+        # vim mode copy
+        setw -g mode-keys vi
+        bind v copy-mode
+        bind-key -T copy-mode-vi 'v' send -X begin-selection     # Begin selection in copy mode.
+        bind-key -T copy-mode-vi 'C-v' send -X rectangle-toggle  # Begin selection in copy mode.
+        bind-key -T copy-mode-vi 'y' send -X copy-selection      # Yank selection in copy mode.
+        bind-key -T copy-mode-vi 'Escape' send -X cancel # exit out of copy mode
 
         # navigation
         bind -n M-1 selectw -t 1
