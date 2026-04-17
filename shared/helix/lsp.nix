@@ -39,6 +39,13 @@
         ];
       }
       {
+        name = "html";
+        auto-format = true;
+        language-servers = [
+          "emmet-lsp"
+        ];
+      }
+      {
         name = "tsx";
         auto-format = true;
         language-servers = [
