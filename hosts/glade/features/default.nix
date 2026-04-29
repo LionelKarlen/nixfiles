@@ -16,6 +16,7 @@
     (final: prev: {
       vintagestory = prev.callPackage ../../../packages/vintagestory/vintagestory.nix { };
       microcad = prev.callPackage ../../../packages/microcad/microcad.nix { };
+      numbat = prev.callPackage ../../../packages/numbat/numbat.nix { };
     })
   ];
 
@@ -36,6 +37,7 @@
       libreoffice
       rnote
       microcad
+      numbat
     ])
     ++ (with pkgs-unstable; [
       obs-studio
