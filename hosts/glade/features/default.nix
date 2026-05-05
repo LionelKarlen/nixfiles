@@ -1,6 +1,7 @@
 {
   pkgs,
   pkgs-unstable,
+  config,
   ...
 }:
 {
@@ -17,8 +18,11 @@
       vintagestory = prev.callPackage ../../../packages/vintagestory/vintagestory.nix { };
       microcad = prev.callPackage ../../../packages/microcad/microcad.nix { };
       numbat = prev.callPackage ../../../packages/numbat/numbat.nix { };
+      quoin = prev.callPackage ../../../packages/quoin/quoin.nix { };
     })
   ];
+
+  home.file."${config.xdg.configHome}/quoin/dict.txt".source = ./files/quoin.txt;
 
   home.packages =
     (with pkgs; [
@@ -38,6 +42,7 @@
       rnote
       microcad
       numbat
+      quoin
     ])
     ++ (with pkgs-unstable; [
       obs-studio
