@@ -1,8 +1,12 @@
 { pkgs, ... }:
 {
+  imports = [
+    plugins/maud.nix
+  ];
   nixpkgs.overlays = [
     (final: prev: {
       cria = prev.callPackage ../../packages/cria/cria.nix { };
+      maudfmt = prev.callPackage ../../packages/maudfmt/maudfmt.nix { };
     })
   ];
   home.packages = with pkgs; [
@@ -12,15 +16,43 @@
     emmet-language-server
     biome
     cria
+    maudfmt
   ];
   programs.helix.settings.editor.lsp = {
     display-inlay-hints = true;
   };
   programs.helix.languages = {
+    grammar = [
+      {
+        name = "maud";
+        source = {
+          git = "https://github.com/jjx-lab/tree-sitter-maud.git";
+          rev = "d8cb8559f961b80d175cc268ca52fdb95af55775";
+        };
+      }
+    ];
     language = [
+      {
+        name = "maud";
+        scope = "source.maud";
+        formatter.command = "maudfmt -s";
+        file-types = [ ];
+      }
       {
         name = "cpp";
         auto-format = true;
+      }
+      {
+        name = "rust";
+        auto-format = true;
+        formatter = {
+          command = "bash";
+          args = [
+            "-c"
+            # fix edition to 2024 here. explicit editions can be set in rustfmt.toml
+            "maudfmt -s | rustfmt --edition 2024"
+          ];
+        };
       }
       {
         name = "nix";
