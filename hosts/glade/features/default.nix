@@ -19,6 +19,7 @@
       microcad = prev.callPackage ../../../packages/microcad/microcad.nix { };
       numbat = prev.callPackage ../../../packages/numbat/numbat.nix { };
       quoin = prev.callPackage ../../../packages/quoin/quoin.nix { };
+      encroissant = prev.callPackage ../../../packages/en-croissant/en-croissant.nix { };
     })
   ];
 
@@ -43,6 +44,7 @@
       microcad
       numbat
       quoin
+      encroissant
     ])
     ++ (with pkgs-unstable; [
       obs-studio
