@@ -1,6 +1,6 @@
 { ... }:
 {
   programs.helix.settings = {
-    theme = "ayu_light";
+    theme = "flexoki_light";
   };
 }
