@@ -1,0 +1,62 @@
+{
+  den.aspects.helix = {
+    homeManager = {
+      programs.helix.settings.keys = {
+        normal = {
+          ";" = ":w";
+          "x" = "extend_to_line_bounds";
+          "X" = "extend_line_below";
+          "D" = [
+            "extend_to_line_end"
+            "delete_selection"
+          ];
+          "," = [
+            "collapse_selection"
+            "keep_primary_selection"
+          ];
+          "g" = {
+            "u" = "jump_backward";
+          };
+          "space" = {
+            "o" = "file_picker";
+            "f" = "file_picker_in_current_buffer_directory";
+            "l" = "buffer_picker";
+            ";" = ":reload-all";
+            "A" = ":lsp-workspace-command";
+            "q" = {
+              "b" = ":buffer-close";
+              "B" = ":buffer-close!";
+              "o" = ":buffer-close-others";
+              "a" = [
+                ":buffer-close-all"
+                "file_picker"
+              ];
+              "z" = ":q!";
+              "q" = ":q!";
+            };
+            "m" = [
+              "toggle_comments"
+              "toggle_comments"
+            ];
+          };
+          "Z" = {
+            "Z" = ":q";
+          };
+          "{" = "goto_prev_paragraph";
+          "}" = "goto_next_paragraph";
+          "C-u" = [
+            "page_cursor_half_up"
+            "align_view_center"
+          ];
+          "C-d" = [
+            "page_cursor_half_down"
+            "align_view_center"
+          ];
+        };
+        insert = {
+          "C-l" = "completion";
+        };
+      };
+    };
+  };
+}
