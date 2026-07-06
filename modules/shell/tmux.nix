@@ -50,6 +50,9 @@
           bind -n M-5 selectw -t 5
           bind -n M-6 selectw -t 6
           bind -n M-7 selectw -t 7
+
+          bind -n M-h select-window -p
+          bind -n M-l select-window -n
         '';
       };
     };
