@@ -2,7 +2,7 @@
 {
   den.aspects.media = {
     homeManager =
-      { pkgs, ... }:
+      { ... }:
       let
         pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
       in
@@ -12,7 +12,16 @@
         ];
         programs.freetube = {
           enable = true;
-          package = pkgs-unstable.freetube;
+          package =
+            with pkgs-unstable;
+            (symlinkJoin {
+              name = "freetube";
+              paths = [ freetube ];
+              buildInputs = [ makeWrapper ];
+              postBuild = ''
+                wrapProgram $out/bin/freetube --add-flags "--disable-gpu"
+              '';
+            });
         };
       };
   };
