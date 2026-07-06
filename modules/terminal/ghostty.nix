@@ -5,8 +5,8 @@
         enable = true;
         clearDefaultKeybinds = true;
         settings = {
-          font-family = "Hasklug Nerd Font";
-          font-size = 13;
+          font-family = "Hasklug Nerd Font Mono";
+          font-size = 14;
           window-padding-x = 0;
           window-padding-y = 0;
           window-decoration = "none";

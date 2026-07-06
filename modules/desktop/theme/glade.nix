@@ -36,7 +36,7 @@
 
               monospace = {
                 package = pkgs.nerd-fonts.hasklug;
-                name = "Hasklug Nerd Font";
+                name = "Hasklug Nerd Font Mono";
               };
             };
           };
