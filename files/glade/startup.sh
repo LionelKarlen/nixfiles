@@ -1,5 +1,5 @@
 #!/bin/sh
-swww-daemon & 
+awww-daemon & 
 # swww img ~/Pictures/wallpapers/bright_mountains.jpg
-swww img ~/Pictures/wallpapers/matt-palmer-dSZJXtLOlB0-unsplash.jpg
+awww img ~/Pictures/wallpapers/matt-palmer-dSZJXtLOlB0-unsplash.jpg
 waybar &

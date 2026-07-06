@@ -10,7 +10,7 @@
           pavucontrol
           hyprshot
           wl-clipboard
-          swww
+          awww
         ];
 
         wayland.windowManager.hyprland = {
@@ -20,6 +20,7 @@
           portalPackage = null;
           xwayland.enable = true;
           systemd.enable = true;
+          configType = "hyprlang";
 
           settings = {
             input = {
@@ -60,7 +61,6 @@
               ];
             };
             dwindle = {
-              pseudotile = "yes";
               preserve_split = "yes";
             };
             master = {
@@ -88,9 +88,8 @@
               "$mainMod SHIFT, E, exit" # close hyprland
               "$mainMod, Q, killactive" # close current window
               "$mainMod, T, togglefloating" # toggle the current window as floating
-              "$mainMod, U, togglesplit" # toggle vertical or horizontal splitting
-              "$mainMod, P, pseudo," # pseudo
               "$mainMod, F, fullscreen, 0"
+              "$mainMod, M, fullscreen, 1"
 
               # focus
               "$mainMod, h, movefocus, l"
