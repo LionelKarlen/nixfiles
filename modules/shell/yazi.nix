@@ -50,7 +50,7 @@
             require("full-border"):setup()
           '';
           keymap = {
-            mgr.keymap = [
+            mgr.prepend_keymap = [
               {
                 on = "<Enter>";
                 run = "plugin smart-enter";
@@ -64,11 +64,6 @@
               {
                 on = "<Esc>";
                 run = "quit";
-                desc = "";
-              }
-              {
-                on = ",,";
-                run = "close";
                 desc = "";
               }
             ];
