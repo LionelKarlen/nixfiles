@@ -18,6 +18,8 @@
             fd
             htop
             mprocs
+            treefmt
+            nixfmt
           ])
           ++ (with pkgs-unstable; [
             just

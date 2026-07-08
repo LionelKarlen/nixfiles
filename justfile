@@ -7,3 +7,6 @@ os command=default:
 home command=default:
     nix run .#write-flake
     nh home {{command}}
+
+fmt:
+    treefmt
