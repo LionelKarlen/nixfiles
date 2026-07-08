@@ -5,6 +5,9 @@
       {
         programs.sioyek = {
           enable = true;
+          bindings = {
+            "goto_mark(`)" = "zz";
+          };
           package = pkgs.symlinkJoin {
             name = "sioyek";
             paths = [ pkgs.sioyek ];
