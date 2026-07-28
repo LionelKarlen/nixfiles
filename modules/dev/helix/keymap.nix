@@ -29,6 +29,9 @@
               "o" = ":buffer-close-others";
               "a" = [
                 ":buffer-close-all"
+              ];
+              "A" = [
+                ":buffer-close-all"
                 "file_picker"
               ];
               "z" = ":q!";
