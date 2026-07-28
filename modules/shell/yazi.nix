@@ -41,7 +41,7 @@
             full-border = "${yazi-plugins}/full-border.yazi";
           };
           settings = {
-            manager = {
+            mgr = {
               show_hidden = true;
             };
           };
