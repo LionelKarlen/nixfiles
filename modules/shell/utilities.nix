@@ -20,6 +20,7 @@
             mprocs
             treefmt
             nixfmt
+            watchexec
           ])
           ++ (with pkgs-unstable; [
             just
