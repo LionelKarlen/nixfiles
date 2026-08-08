@@ -21,6 +21,8 @@ in
               local.numbat
             ])
             ++ (with pkgs-unstable; [
+              microcad
+              f3d
               obs-studio
               orca-slicer
               (symlinkJoin {
