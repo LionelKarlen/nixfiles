@@ -32,6 +32,14 @@
           ];
           language = [
             {
+              name = "rescript";
+              auto-format = true;
+              language-servers = [
+                "rescript-lsp"
+                "emmet-lsp"
+              ];
+            }
+            {
               name = "maud";
               scope = "source.maud";
               formatter.command = "maudfmt -s";
@@ -158,6 +166,10 @@
                 };
               };
             };
+            rescript-lsp = {
+              command = "rescript-language-server";
+              args = [ "--stdio" ];
+            };
             emmet-lsp = {
               command = "emmet-language-server";
               args = [ "--stdio" ];
@@ -165,6 +177,7 @@
                 includeLanguages = {
                   "javascriptreact" = "html";
                   "typescriptreact" = "html";
+                  "rescript" = "typescriptreact";
                 };
               };
             };

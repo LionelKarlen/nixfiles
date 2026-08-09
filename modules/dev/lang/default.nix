@@ -11,6 +11,7 @@
       dart
       zig
       lean
+      rescript
     ];
 
   };

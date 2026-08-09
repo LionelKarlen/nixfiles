@@ -1,0 +1,11 @@
+--- a/src/findBinary.ts
++++ b/src/findBinary.ts
+@@ -1,7 +1,7 @@
+ import * as fs from "fs";
+ import * as fsAsync from "fs/promises";
+ import * as path from "path";
+-import * as semver from "semver";
++import * as semver from "../../server/node_modules/semver";
+ import * as url from "url";
+ 
+ export type BinaryName =
