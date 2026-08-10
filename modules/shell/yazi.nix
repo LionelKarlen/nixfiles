@@ -1,4 +1,10 @@
-{
+{ inputs, ... }: {
+  flake-file.inputs = {
+    yazi = {
+      url = "github:spencer-michaels/yazi";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
   den.aspects.shell = {
     homeManager =
       {
@@ -32,6 +38,7 @@
         };
       in
       {
+        nixpkgs.overlays = [ inputs.yazi.overlays.default ];
         programs.yazi = {
           enable = true;
           shellWrapperName = "y";
@@ -43,6 +50,11 @@
           settings = {
             mgr = {
               show_hidden = true;
+              # For config see:
+              # https://github.com/spencer-michaels/yazi/tree/main
+              exclude = [
+                "*.res.mjs"
+              ];
             };
           };
           initLua = ''
