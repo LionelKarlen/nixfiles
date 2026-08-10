@@ -9,14 +9,21 @@
             email = "lionel.karlen@protonmail.com";
           };
           ui.default-command = "log";
-          aliases.tug = [
-            "bookmark"
-            "move"
-            "--from"
-            "heads(::@- & bookmarks())"
-            "--to"
-            "@-"
-          ];
+          aliases = {
+            summary = [
+              "diff"
+              "--summary"
+              "-r"
+            ];
+            tug = [
+              "bookmark"
+              "move"
+              "--from"
+              "heads(::@- & bookmarks())"
+              "--to"
+              "@-"
+            ];
+          };
         };
       };
     };
