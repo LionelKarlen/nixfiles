@@ -21,6 +21,7 @@ in
               local.numbat
             ])
             ++ (with pkgs-unstable; [
+              breaktimer
               microcad
               f3d
               obs-studio
