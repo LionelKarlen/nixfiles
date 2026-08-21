@@ -5,7 +5,7 @@
         enable = true;
         clearDefaultKeybinds = true;
         settings = {
-          font-family = "Hasklug Nerd Font Mono";
+          font-family = "IoskeleyMono Nerd Font";
           font-size = 14;
           window-padding-x = 0;
           window-padding-y = 0;

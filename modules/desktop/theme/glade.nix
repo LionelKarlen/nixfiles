@@ -6,13 +6,15 @@
       homeManager =
         { pkgs, ... }:
         {
-          home.packages = (
-            with pkgs.nerd-fonts;
-            [
+          home.packages =
+            (with pkgs.nerd-fonts; [
               hasklug
               blex-mono
-            ]
-          );
+              inconsolata
+            ])
+            ++ (with pkgs; [
+              ioskeley-mono.normal-NF
+            ]);
 
           stylix = {
             base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-light.yaml";
@@ -37,6 +39,11 @@
               monospace = {
                 package = pkgs.nerd-fonts.hasklug;
                 name = "Hasklug Nerd Font Mono";
+              };
+            };
+            targets = {
+              ghostty = {
+                fonts.enable = false;
               };
             };
           };
