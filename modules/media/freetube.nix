@@ -2,10 +2,7 @@
 {
   den.aspects.media = {
     homeManager =
-      { ... }:
-      let
-        pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
-      in
+      { pkgs, ... }:
       {
         nixpkgs.overlays = [
           inputs.self.overlays.default
@@ -13,10 +10,10 @@
         programs.freetube = {
           enable = true;
           package =
-            with pkgs-unstable;
+            with pkgs;
             (symlinkJoin {
               name = "freetube";
-              paths = [ freetube ];
+              paths = [ local.freetube ];
               buildInputs = [ makeWrapper ];
               postBuild = ''
                 wrapProgram $out/bin/freetube --add-flags "--disable-gpu"
