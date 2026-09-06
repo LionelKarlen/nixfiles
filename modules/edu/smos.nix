@@ -12,7 +12,30 @@
       ];
       programs.smos = {
         enable = true;
+
+        config = {
+          reset = true;
+
+          browser = {
+            empty = [
+              {
+                key = "e";
+                action = "browserStartNew";
+              }
+            ];
+
+            existent = [
+              {
+                key = "e";
+                action = "browserStartNew";
+              }
+            ];
+          };
+
+          explainer-mode = true;
+        };
       };
+
     };
   };
 }
