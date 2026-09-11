@@ -21,6 +21,7 @@
           yazi.enable = false;
           firefox.enable = false;
           zen-browser.enable = false;
+          ghostty.colors.enable = false;
         };
       };
     };
