@@ -1,0 +1,4 @@
+header:
+  visible: false
+appearance:
+  theme: catppuccin-latte

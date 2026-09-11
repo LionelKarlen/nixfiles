@@ -1,0 +1,118 @@
+fields:
+  - name: status
+    type: enum
+    values:
+      - value: none
+        label: ""
+        default: true
+      - value: todo
+        label: Todo
+      - value: next
+        label: Next
+      - value: waiting
+        label: Waiting
+      - value: done
+        label: Done
+      - value: dropped
+        label: Dropped
+      - value: sleeping
+        label: Sleeping
+  - name: type
+    type: enum
+    values:
+      - value: capture
+        label: Capture
+        default: true
+      - value: task
+        label: Task
+      - value: project
+        label: Project
+      - value: event
+        label: Event
+  - name: goal
+    type: text
+  - name: deadline
+    type: datetime
+  - name: scheduled
+    type: datetime
+  - name: parent
+    type: tikiIdList
+  - name: contexts
+    type: stringList
+  - name: area
+    type: text
+actions:
+  - key: "C"
+    kind: ruki
+    label: "Quick Capture"
+    input: string
+    action: create title=input() type="capture"
+  - key: "D"
+    kind: ruki
+    label: "Schedule a deadline"
+    input: timestamp
+    action: update where id=id() set deadline=call(tu input())
+views:
+  - name: Inbox
+    kind: list
+    key: "I"
+    layout: 'title'
+    lanes:
+      - name: Inbox
+        filter: >
+          select where
+          type = "capture" and
+          status = "none"
+
+  - name: Next
+    kind: list
+    key: "N"
+    layout: 'title'
+    lanes:
+      - name: Next
+        filter: >
+          select where
+          type = "task" and
+          status = "next"
+
+  - name: Agenda
+    kind: list
+    key: "A"
+    layout: 'title'
+    lanes:
+      - name: Upcoming
+        filter: >
+          select where
+          status != "done" and
+          type != "capture" and
+          deadline >= now() and
+          scheduled >= now() and
+          deadline <= now() + 14day
+          order by deadline
+      - name: Next
+        filter: >
+          select where
+          type = "task" and
+          status = "next"
+    
+  - name: Upcoming
+    kind: list
+    key: "U"
+    layout: 'type.label title deadline'
+    lanes:
+      - name: Upcoming
+        filter: >
+          select where
+          status != "done" and
+          type != "capture" and
+          deadline >= now() and
+          scheduled >= now() and
+          deadline <= now() + 14day
+          order by deadline
+
+triggers:
+  - description: limit to 1 parent
+    ruki: >
+      before update
+        where has(old.parent) and has(new.parent) and old.parent!=new.parent
+      deny "Cannot choose your parents"
