@@ -44,6 +44,7 @@
           };
           "Z" = {
             "Z" = ":q";
+            "Q" = ":cq!";
           };
           "{" = "goto_prev_paragraph";
           "}" = "goto_next_paragraph";
