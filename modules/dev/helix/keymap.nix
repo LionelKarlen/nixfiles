@@ -1,6 +1,12 @@
-{
+{ inputs, ... }: {
   den.aspects.helix = {
-    homeManager = {
+    homeManager = { pkgs, ... }: {
+      nixpkgs.overlays = [
+        inputs.self.overlays.default
+      ];
+      home.packages = with pkgs; [
+        local.bttf
+      ];
       programs.helix.settings.keys = {
         normal = {
           ";" = ":w";

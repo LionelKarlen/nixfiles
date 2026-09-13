@@ -8,6 +8,12 @@
           ":| quoin stdio"
         ];
         "space" = {
+          "i" = {
+            "d" = [
+              "select_all_siblings"
+              ":| bttf time parse -i -f flexible | bttf time fmt -f '%%Y-%%m-%%d'"
+            ];
+          };
           "e" = [
             ":sh rm -f /tmp/yazi-unique-file"
             '':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/yazi-unique-file''
