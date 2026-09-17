@@ -14,6 +14,10 @@
               ":| bttf time parse -i -f flexible | bttf time fmt -f '%%Y-%%m-%%d'"
             ];
           };
+          "n" = {
+            "l" = "@ms[ms[";
+            "b" = "@ms*ms*";
+          };
           "e" = [
             ":sh rm -f /tmp/yazi-unique-file"
             '':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/yazi-unique-file''
