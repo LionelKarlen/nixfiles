@@ -16,6 +16,7 @@
           biome
           local.cria
           local.maudfmt
+          local.tray
         ];
         programs.helix.settings.editor.lsp = {
           display-inlay-hints = true;
@@ -143,6 +144,17 @@
                   end = "";
                 }
               ];
+            }
+            {
+              name = "kdl";
+              auto-format = true;
+              formatter = {
+                command = "tray-tools";
+                args = [
+                  "format"
+                  "--stdio"
+                ];
+              };
             }
           ];
 
