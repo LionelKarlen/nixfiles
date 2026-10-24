@@ -47,3 +47,4 @@
 \mu;μ
 \Omega;Ω
 \omega;ω
+\degree;°
