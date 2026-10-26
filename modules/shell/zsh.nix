@@ -19,9 +19,14 @@
           # so the root folder is ~, making enumeration really annoying
           tray = "cd ~/tray && hx --vsplit inbox.kdl next/todo.kdl";
           notebook = "hx ~/notebook";
+          # temporary to build memory
+          mkdir = "echo use the other one";
         };
         initContent = ''
           KEYTIMEOUT=10
+          mkcd() {
+            mkdir -p "$@" && cd "$@"
+          }
         '';
       };
     };
