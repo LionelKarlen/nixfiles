@@ -11,6 +11,7 @@
         base
         browser
         hyprland
+        niri
         desktop
         dev
         edu
