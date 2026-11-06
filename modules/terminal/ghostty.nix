@@ -7,7 +7,7 @@
         settings = {
           font-family = "IoskeleyMono Nerd Font";
           font-size = 14;
-          theme = "Adwaita";
+          theme = "noctalia";
           window-padding-x = 0;
           window-padding-y = 0;
           window-decoration = "none";

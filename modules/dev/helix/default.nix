@@ -13,7 +13,7 @@ in
         defaultEditor = true;
         package = pkgs-unstable.helix;
         settings = {
-          theme = "flexoki_light";
+          theme = "noctalia";
         };
       };
     };
