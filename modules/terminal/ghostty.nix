@@ -9,6 +9,7 @@
           font-size = 14;
           theme = "noctalia";
           window-padding-x = 0;
+          gtk-single-instance = false;
           window-padding-y = 0;
           window-decoration = "none";
           window-padding-balance = true;
