@@ -11,7 +11,7 @@ in
       programs.helix = {
         enable = true;
         defaultEditor = true;
-        package = pkgs-unstable.helix;
+        package = pkgs-unstable.steelix;
         settings = {
           theme = "noctalia";
         };
