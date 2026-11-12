@@ -1,0 +1,236 @@
+input {
+    // workspace-auto-back-and-forth
+    keyboard {
+        xkb {
+            layout "ch"
+            variant "de"
+        }
+    }
+
+    mouse {
+        accel-profile "flat"
+    }
+
+    // Next sections include libinput settings.
+    // Omitting settings disables them, or leaves them at their default values.
+    // All commented-out settings here are examples, not defaults.
+    touchpad {
+        off
+    }
+}
+
+output "DP-2" {
+    mode "2560x1440@165.080"
+    position x=0 y=0
+}
+
+output "DP-1" {
+    mode "2560x1440@59.951"
+    position x=2560 y=0
+}
+
+layout {
+    gaps 12
+    center-focused-column "never"
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    default-column-width { proportion 0.5; }
+
+    focus-ring {
+        off
+    }
+    
+    border {
+        width 2
+        active-color "#ffc87f"
+        inactive-color "#505050"
+
+        // Color of the border around windows that request your attention.
+        urgent-color "#9b0000"
+    }
+
+    struts {
+        top 2
+    }
+
+    tab-indicator {
+        gap 0
+        length total-proportion=1.0
+        position "bottom"
+    }
+}
+
+spawn-at-startup "noctalia"
+// For walker + elephant
+spawn-at-startup "sh" "-c" "systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE XDG_SESSION_DESKTOP DBUS_SESSION_BUS_ADDRESS; dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE XDG_SESSION_DESKTOP; systemctl --user restart elephant.service"
+spawn-sh-at-startup "walker --gapplication-service"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+prefer-no-csd
+
+// Animation settings.
+// The wiki explains how to configure individual animations:
+// https://niri-wm.github.io/niri/Configuration:-Animations
+animations {
+    // Slow down all animations by this factor. Values below 1 speed them up instead.
+    slowdown 1
+
+    workspace-switch {
+        off
+        // spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
+    }
+}
+
+// Open everything as a tiled window by default
+window-rule {
+    open-maximized false
+    open-maximized-to-edges false
+    open-fullscreen false
+}
+
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+// Block out password managers
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screen-capture"
+}
+
+
+binds {
+    // Basics
+    Mod+slash { show-hotkey-overlay; }
+    Mod+P repeat=false { toggle-overview; }
+    Mod+Q repeat=false { close-window; }
+
+    Mod+Z {screenshot;}
+
+    // Launch applications
+    Mod+Return hotkey-overlay-title="Open Ghostty" {spawn "ghostty";}
+    Mod+Shift+Comma hotkey-overlay-title="Open Ghostty" {spawn "ghostty";}
+    Mod+B hotkey-overlay-title="Open Zen" {spawn "zen-twilight";}
+    Mod+Shift+B hotkey-overlay-title="Open Zen" {spawn-sh "zen-twilight --private-window";}
+    Mod+Space hotkey-overlay-title="Launcher" {spawn "walker";}
+    Mod+C hotkey-overlay-title="Clipboard" {spawn-sh "walker --provider clipboard";}
+
+    // Focus
+    Mod+H     { focus-column-left; }
+    Mod+L     { focus-column-right; }
+    Mod+J     { focus-window-down; }
+    Mod+K     { focus-window-up; }
+
+    // Cycle tabs
+    Mod+Backspace { focus-window-down-or-top;}
+
+    // Movement
+    Mod+Shift+H     { move-column-left; }
+    Mod+Shift+L     { move-column-right; }
+
+    // Monitor focus
+    Mod+Ctrl+H     { focus-monitor-left; }
+    Mod+Ctrl+L     { focus-monitor-right; }
+
+    // Monitor Movement
+    Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
+
+    // Scrollwheel
+    Mod+WheelScrollDown      { focus-column-right; }
+    Mod+WheelScrollUp       { focus-column-left; }
+    Mod+Shift+WheelScrollRight { move-column-right; }
+    Mod+Shift+WheelScrollLeft  { move-column-left; }
+
+    // Workspaces
+    Mod+1 {focus-workspace "1";}
+    Mod+Shift+1 {move-column-to-workspace "1";}
+    Mod+2 {focus-workspace "2";}
+    Mod+Shift+2 {move-column-to-workspace "2";}
+    Mod+3 {focus-workspace "3";}
+    Mod+Shift+3 {move-column-to-workspace "3";}
+    Mod+Y {focus-workspace "media";}
+    Mod+Shift+Y {move-column-to-workspace "media";}
+    Mod+D {focus-workspace "comms";}
+    Mod+Shift+D {move-column-to-workspace "comms";}
+    Mod+I {focus-workspace "todos";}
+    Mod+Shift+I {move-column-to-workspace "todos";}
+    Mod+O {focus-workspace "notes";}
+    Mod+Shift+O {move-column-to-workspace "notes";}
+
+    Mod+Shift+Alt+Ctrl+J {move-workspace-down;}
+    Mod+Shift+Alt+Ctrl+K {move-workspace-up;}
+
+    Mod+Shift+J {move-column-to-workspace-down;}
+    Mod+Shift+K {move-column-to-workspace-up;}
+    Mod+Ctrl+J {focus-workspace-down;}
+    Mod+Ctrl+K {focus-workspace-up;}
+
+
+    // Toggling and Tabbing
+    Mod+W { toggle-column-tabbed-display; }
+    Mod+Escape { focus-workspace-previous; }
+    Mod+Comma { consume-or-expel-window-left; }
+    Mod+Period { consume-or-expel-window-right; }
+
+    // Cycle through widths set in preset-column-widths.
+    Mod+R { switch-preset-column-width; }
+    Mod+Shift+R { switch-preset-column-width-back; }
+
+    Mod+M { maximize-column; }
+    Mod+F { fullscreen-window; }
+
+    Mod+Shift+C { center-column; }
+
+    // Center all fully visible columns on screen.
+    Mod+Ctrl+C { center-visible-columns; }
+
+    Mod+V       { toggle-window-floating; }
+
+    Mod+0 allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    Mod+Shift+E { quit; }
+    Mod+Shift+P hotkey-overlay-title="Session Menu" {
+        spawn-sh "noctalia msg panel-toggle session";
+    }
+}
+
+window-rule {
+    match app-id="spotify"
+    open-on-workspace "media"
+}
+
+workspace "1" {
+    open-on-output "DP-2"
+}
+workspace "2" {
+    open-on-output "DP-2"
+}
+workspace "3" {
+    open-on-output "DP-2"
+}
+workspace "comms" {
+    open-on-output "DP-2"
+}
+workspace "todos" {
+    open-on-output "DP-2"
+}
+workspace "notes" {
+    open-on-output "DP-2"
+}
+workspace "media" {
+    open-on-output "DP-2"
+}
+
+include "noctalia.kdl"
