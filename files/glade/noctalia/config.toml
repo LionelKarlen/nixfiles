@@ -1,0 +1,87 @@
+[bar]
+order = ["main"]
+
+[bar.default]
+position           = "top"
+enabled            = true
+reserve_space      = true
+layer              = "top"
+thickness          = 26
+background_opacity = 1.0
+compositor_blur    = false
+shadow             = false
+contact_shadow     = false
+panel_overlap      = 1
+radius             = 0
+concave_edge_corners = false
+margin_ends        = 0
+margin_edge        = 0
+margin_opposite_edge = 0
+padding            = 12
+widget_spacing     = 6
+hover_highlight    = false
+show_tooltip       = true
+
+start  = ["workspaces"]
+center = ["clock"]
+end    = ["tray", "notifications", "volume"]
+
+[widget.workspaces]
+style = "minimal"
+show_labels = true      
+show_icons = true
+label_source = "name"
+max_label_chars = 5
+hide_when_empty = true
+focused_output_only = true
+
+[widget.clock]
+format = "{:%d.%m.%y} {:%H:%M}"
+
+[control_center]
+sidebar = "none"
+sidebar_section = "none"
+
+[control_center.media]
+show_visualizer = true
+
+[desktop_widgets]
+enabled = false
+
+[shell]
+corner_radius_scale = 0 
+
+[nightlight]
+enabled = true
+
+[shell.panel]
+session_placement = "floating"
+session_position = "center"
+
+[[shell.session.actions]]
+action = "lock"
+countdown_seconds = 0.0
+enabled = true
+shortcut = "l"
+variant = "default"
+
+[[shell.session.actions]]
+action = "logout"
+countdown_seconds = 0.0
+enabled = true
+shortcut = "1"
+variant = "default"
+
+[[shell.session.actions]]
+action = "reboot"
+countdown_seconds = 0.0
+enabled = true
+shortcut = "2"
+variant = "default"
+
+[[shell.session.actions]]
+action = "shutdown"
+countdown_seconds = 0.0
+enabled = true
+shortcut = "3"
+variant = "destructive"

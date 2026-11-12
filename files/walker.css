@@ -1,0 +1,28 @@
+@define-color surface {{colors.surface.default.hex}};
+@define-color surfaceVariant {{colors.surface_variant.default.hex}};
+
+@define-color onSurface {{colors.on_surface.default.hex}};
+@define-color onSurfaceVariant {{colors.on_surface_variant.default.hex}};
+
+@define-color primary {{colors.primary.default.hex}};
+@define-color secondary {{colors.secondary.default.hex}};
+@define-color error {{colors.error.default.hex}};
+@define-color outline {{colors.outline.default.hex}};
+
+* { all: unset; font-family: monospace; font-size: 18px; color: @onSurface; }
+scrollbar { opacity: 0; }
+.normal-icons { -gtk-icon-size: 16px; } .large-icons { -gtk-icon-size: 32px; }
+
+.box-wrapper {
+  background: @surface;
+  padding: 16px;
+  border: 1px solid @outline;
+  border-radius: 0px;
+}
+.search-container { padding: 8px 0; border-bottom: 1px solid @outline; margin-bottom: 10px; }
+.input { color: @onSurface; }
+child:selected .item-box { background: @primary; }
+child:selected .item-box * { color: @surfaceVariant; }
+.item-box { padding-left: 14px; }
+.item-text-box { padding: 10px 0; }
+.item-image { margin-right: 14px; }

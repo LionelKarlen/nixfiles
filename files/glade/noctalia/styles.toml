@@ -1,0 +1,15 @@
+[theme.templates]
+enable_builtin_templates = true
+builtin_ids = ["ghostty","helix","niri"]
+enable_community_templates=true
+community_ids =["zen-browser", "discord", "obsidian"]
+
+[theme.templates.user.walker]
+input_path = "$XDG_CONFIG_HOME/noctalia/templates/walker.css"
+output_path = "$XDG_CONFIG_HOME/walker/themes/elk/style.css"
+
+[location]
+auto_locate = false
+custom_schedule = true
+sunset = "19:30"
+sunrise = "06:30"

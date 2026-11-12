@@ -1,0 +1,24 @@
+[theme]
+mode              = "auto"
+shell_mode        = "follow"
+source            = "community"
+builtin           = "Noctalia"
+community_palette = "Flexoki"
+custom_palette    = "MyPalette"
+wallpaper_scheme  = "m3-content"
+pure_black_dark   = false
+sync_color_scheme = true
+
+[wallpaper]
+enabled = true
+fill_mode  = "crop"
+fill_color = "#111111"
+transition = ["fade", "wipe", "disc", "stripes", "zoom", "honeycomb", "vortex", "pixel", "diamond", "golden", "melt"]
+transition_duration = 1500
+edge_smoothness = 0.3
+transition_on_startup = false
+directory = "/home/lionel/Pictures/wallpapers"
+per_monitor_directories = false
+
+[wallpaper.default]
+path = "/home/lionel/Pictures/wallpapers/HUma1rYWgAAh90o.jpg"

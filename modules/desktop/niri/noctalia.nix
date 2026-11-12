@@ -12,6 +12,7 @@
       home.packages = [
         inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
+      xdg.configFile."noctalia/templates/walker.css".source = ../../../files/walker.css;
     };
   };
 }
