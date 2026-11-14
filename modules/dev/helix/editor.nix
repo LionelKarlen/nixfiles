@@ -20,7 +20,10 @@
           render = true;
         };
 
-        insecure = true;
+        workspace-trust = {
+          prompt = false;
+          level = "servers";
+        };
 
         end-of-line-diagnostics = "hint";
         inline-diagnostics = {
